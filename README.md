@@ -22,14 +22,15 @@ Python v2.7; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 ;scipy $pip install -U scipy
 ;scikits.bootstrap $pip install scikits.bootstrap
 
-# Testbed Component Placement (in Mininet)
+# Demonstration
+
+## Testbed Component Placement (in Mininet)
 - ms-embsys-app-mouseController is run on ms-com
 - ss-embsys-app-vrep is run on ss-com
 - To edit the delay, bandwidth and traffic of the links, change the default settings in the file TCPSbed/mininetScript/settings
 
 ![gitTestbedComponentPlacement](https://user-images.githubusercontent.com/48801729/75961647-65b4e900-5ee8-11ea-8c83-7cf4760f2347.png)
 
-# Demonstration
 - To run the testbed, go to the folder mininetScript and run the command $sudo python mininetScript.py
 - Wait for the xterm/windows ms-com, ss-com, srv, VREP and ms-embsys-app-mouseController and ss-embsys-app-vrep to pop up
 - Now use the mouse to control the PhantomX robot simulated in VREP
