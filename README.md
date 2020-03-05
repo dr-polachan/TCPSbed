@@ -29,6 +29,7 @@ ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 - To run the testbed, go to the folder mininetScript and run the command $sudo python mininetScript.py
 - Wait for the xterm/windows ms-com, ss-com, srv, VREP and ms-embsys-app-mouseController and ss-embsys-app-vrep to pop up
 - Now use the mouse to control the PhantomX robot simulated in VREP
--- Right click the mouse to start the mouse control. Right click again to stop the mouse control
--- Mouse movements in X-Y direction is mapped to robot X-Y axis.  Y  movement  of  the  mouse,  while  the  left  button is pressed is mapped to the Z axis of the robot.
-- When the robot hits a target, the resultant force can be observed as a feedback in the ms-com terminal. 
+  -- Right click the mouse to start the mouse control. Right click again to stop the mouse control
+  -- Mouse movements in X-Y direction is mapped to robot X-Y axis.  Y  movement  of  the  mouse,  while  the  left  button is pressed is mapped to the Z axis of the robot.
+  -- Use scroll wheel to open and close the pincher. 
+- The force experienced by the robot when it hit an object is feedback to ms-com and displayed in the ms-com terminal. 
