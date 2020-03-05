@@ -1,0 +1,8 @@
+#!/bin/bash
+xhost +
+xterm -title "msEmbsysApp_mouse" -hold -e "sudo python embsysApps/msEmbsysApp_mouse.py" &
+xterm -title "ms_com" -hold -e "sudo python ms_com.py" 
+
+
+
+

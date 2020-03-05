@@ -1,0 +1,5 @@
+#!/bin/bash
+
+xterm -title "testPC" -hold -e "sudo python test_pc.py" 
+
+

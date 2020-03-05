@@ -1,0 +1,200 @@
+time_received:1500307240.943331 ping seq:100000 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 0 end
+time_received:1500307240.944635 ping seq:100000 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 0.0 50 end
+time_received:1500307240.970113 ping seq:100001 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 1 end
+time_received:1500307240.973585 ping seq:100001 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 1.0 50 end
+time_received:1500307240.994076 ping seq:100002 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 2 end
+time_received:1500307240.995009 ping seq:100002 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 2.0 50 end
+time_received:1500307241.014389 ping seq:100003 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 3 end
+time_received:1500307241.015445 ping seq:100003 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 3.0 50 end
+time_received:1500307241.034772 ping seq:100004 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 4 end
+time_received:1500307241.036226 ping seq:100004 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 4.0 50 end
+time_received:1500307241.055113 ping seq:100005 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 5 end
+time_received:1500307241.056744 ping seq:100005 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 5.0 50 end
+time_received:1500307241.075487 ping seq:100006 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 6 end
+time_received:1500307241.077151 ping seq:100006 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 6.0 50 end
+time_received:1500307241.095767 ping seq:100007 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 7 end
+time_received:1500307241.097525 ping seq:100007 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 7.0 50 end
+time_received:1500307241.116081 ping seq:100008 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 8 end
+time_received:1500307241.117433 ping seq:100008 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 8.0 50 end
+time_received:1500307241.136443 ping seq:100009 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 9 end
+time_received:1500307241.137853 ping seq:100009 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 9.0 50 end
+time_received:1500307241.156792 ping seq:100010 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 10 end
+time_received:1500307241.158351 ping seq:100010 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 10.0 50 end
+time_received:1500307241.177516 ping seq:100011 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 11 end
+time_received:1500307241.179280 ping seq:100011 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 11.0 50 end
+time_received:1500307241.199054 ping seq:100012 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 12 end
+time_received:1500307241.199192 ping seq:100012 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 12.0 50 end
+time_received:1500307241.218983 ping seq:100013 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 13 end
+time_received:1500307241.219027 ping seq:100013 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 13.0 50 end
+time_received:1500307241.238176 ping seq:100014 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 14 end
+time_received:1500307241.238907 ping seq:100014 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 14.0 50 end
+time_received:1500307241.258063 ping seq:100015 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 15 end
+time_received:1500307241.259171 ping seq:100015 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 15.0 50 end
+time_received:1500307241.278974 ping seq:100016 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 16 end
+time_received:1500307241.280475 ping seq:100016 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 16.0 50 end
+time_received:1500307241.298770 ping seq:100017 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 17 end
+time_received:1500307241.300445 ping seq:100017 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 17.0 50 end
+time_received:1500307241.320360 ping seq:100018 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 18 end
+time_received:1500307241.321014 ping seq:100018 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 18.0 50 end
+time_received:1500307241.339883 ping seq:100019 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 19 end
+time_received:1500307241.343945 ping seq:100019 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 19.0 50 end
+time_received:1500307241.360139 ping seq:100020 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 20 end
+time_received:1500307241.361589 ping seq:100020 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 20.0 50 end
+time_received:1500307241.380415 ping seq:100021 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 21 end
+time_received:1500307241.382145 ping seq:100021 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 21.0 50 end
+time_received:1500307241.400730 ping seq:100022 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 22 end
+time_received:1500307241.402017 ping seq:100022 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 22.0 50 end
+time_received:1500307241.421042 ping seq:100023 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 23 end
+time_received:1500307241.422489 ping seq:100023 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 23.0 50 end
+time_received:1500307241.441337 ping seq:100024 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 24 end
+time_received:1500307241.442739 ping seq:100024 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 24.0 50 end
+time_received:1500307241.461711 ping seq:100025 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 25 end
+time_received:1500307241.463099 ping seq:100025 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 25.0 50 end
+time_received:1500307241.481986 ping seq:100026 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 26 end
+time_received:1500307241.484636 ping seq:100026 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 26.0 50 end
+time_received:1500307241.502251 ping seq:100027 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 27 end
+time_received:1500307241.504152 ping seq:100027 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 27.0 50 end
+time_received:1500307241.522591 ping seq:100028 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 28 end
+time_received:1500307241.524326 ping seq:100028 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 28.0 50 end
+time_received:1500307241.571863 ping seq:100029 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 29 end
+time_received:1500307241.571921 ping seq:100029 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 29.0 50 end
+time_received:1500307241.588584 ping seq:100030 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 30 end
+time_received:1500307241.588626 ping seq:100030 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 30.0 50 end
+time_received:1500307241.608105 ping seq:100031 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 31 end
+time_received:1500307241.609520 ping seq:100031 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 31.0 50 end
+time_received:1500307241.628263 ping seq:100032 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 32 end
+time_received:1500307241.629324 ping seq:100032 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 32.0 50 end
+time_received:1500307241.648604 ping seq:100033 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 33 end
+time_received:1500307241.649806 ping seq:100033 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 33.0 50 end
+time_received:1500307241.668784 ping seq:100034 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 34 end
+time_received:1500307241.670012 ping seq:100034 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 34.0 50 end
+time_received:1500307241.689121 ping seq:100035 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 35 end
+time_received:1500307241.690189 ping seq:100035 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 35.0 50 end
+time_received:1500307241.709603 ping seq:100036 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 36 end
+time_received:1500307241.711150 ping seq:100036 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 36.0 50 end
+time_received:1500307241.731176 ping seq:100037 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 37 end
+time_received:1500307241.731226 ping seq:100037 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 37.0 50 end
+time_received:1500307241.750312 ping seq:100038 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 38 end
+time_received:1500307241.751549 ping seq:100038 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 38.0 50 end
+time_received:1500307241.770691 ping seq:100039 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 39 end
+time_received:1500307241.772182 ping seq:100039 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 39.0 50 end
+time_received:1500307241.791041 ping seq:100040 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 40 end
+time_received:1500307241.792854 ping seq:100040 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 40.0 50 end
+time_received:1500307241.811335 ping seq:100041 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 41 end
+time_received:1500307241.813348 ping seq:100041 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 41.0 50 end
+time_received:1500307241.831760 ping seq:100042 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 42 end
+time_received:1500307241.833429 ping seq:100042 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 42.0 50 end
+time_received:1500307241.852103 ping seq:100043 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 43 end
+time_received:1500307241.853661 ping seq:100043 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 43.0 50 end
+time_received:1500307241.872378 ping seq:100044 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 44 end
+time_received:1500307241.875151 ping seq:100044 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 44.0 50 end
+time_received:1500307241.894077 ping seq:100045 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 45 end
+time_received:1500307241.894124 ping seq:100045 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 45.0 50 end
+time_received:1500307241.914089 ping seq:100046 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 46 end
+time_received:1500307241.914134 ping seq:100046 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 46.0 50 end
+time_received:1500307241.934269 ping seq:100047 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 47 end
+time_received:1500307241.934312 ping seq:100047 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 47.0 50 end
+time_received:1500307241.953346 ping seq:100048 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 48 end
+time_received:1500307241.954599 ping seq:100048 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 48.0 50 end
+time_received:1500307241.973698 ping seq:100049 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 49 end
+time_received:1500307241.975748 ping seq:100049 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 49.0 50 end
+time_received:1500307241.994030 ping seq:100050 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 50 end
+time_received:1500307241.995793 ping seq:100050 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 50.0 50 end
+time_received:1500307242.014549 ping seq:100051 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 51 end
+time_received:1500307242.017717 ping seq:100051 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 51.0 50 end
+time_received:1500307242.034588 ping seq:100052 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 52 end
+time_received:1500307242.036188 ping seq:100052 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 52.0 50 end
+time_received:1500307242.054958 ping seq:100053 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 53 end
+time_received:1500307242.056787 ping seq:100053 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 53.0 50 end
+time_received:1500307242.075334 ping seq:100054 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 54 end
+time_received:1500307242.077141 ping seq:100054 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 54.0 50 end
+time_received:1500307242.095676 ping seq:100055 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 55 end
+time_received:1500307242.097352 ping seq:100055 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 55.0 50 end
+time_received:1500307242.115834 ping seq:100056 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 56 end
+time_received:1500307242.117427 ping seq:100056 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 56.0 50 end
+time_received:1500307242.136174 ping seq:100057 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 57 end
+time_received:1500307242.137561 ping seq:100057 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 57.0 50 end
+time_received:1500307242.156515 ping seq:100058 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 58 end
+time_received:1500307242.158659 ping seq:100058 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 58.0 50 end
+time_received:1500307242.176724 ping seq:100059 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 59 end
+time_received:1500307242.178108 ping seq:100059 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 59.0 50 end
+time_received:1500307242.196956 ping seq:100060 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 60 end
+time_received:1500307242.198231 ping seq:100060 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 60.0 50 end
+time_received:1500307242.217231 ping seq:100061 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 61 end
+time_received:1500307242.218371 ping seq:100061 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 61.0 50 end
+time_received:1500307242.238735 ping seq:100062 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 62 end
+time_received:1500307242.238785 ping seq:100062 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 62.0 50 end
+time_received:1500307242.263072 ping seq:100063 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 63 end
+time_received:1500307242.263223 ping seq:100063 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 63.0 50 end
+time_received:1500307242.284044 ping seq:100064 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 64 end
+time_received:1500307242.284690 ping seq:100064 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 64.0 50 end
+time_received:1500307242.305179 ping seq:100065 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 65 end
+time_received:1500307242.306174 ping seq:100065 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 65.0 50 end
+time_received:1500307242.326371 ping seq:100066 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 66 end
+time_received:1500307242.326845 ping seq:100066 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 66.0 50 end
+time_received:1500307242.348462 ping seq:100067 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 67 end
+time_received:1500307242.348501 ping seq:100067 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 67.0 50 end
+time_received:1500307242.365971 ping seq:100068 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 68 end
+time_received:1500307242.367041 ping seq:100068 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 68.0 50 end
+time_received:1500307242.386219 ping seq:100069 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 69 end
+time_received:1500307242.387253 ping seq:100069 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 69.0 50 end
+time_received:1500307242.406498 ping seq:100070 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 70 end
+time_received:1500307242.407590 ping seq:100070 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 70.0 50 end
+time_received:1500307242.426789 ping seq:100071 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 71 end
+time_received:1500307242.428221 ping seq:100071 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 71.0 50 end
+time_received:1500307242.447355 ping seq:100072 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 72 end
+time_received:1500307242.448636 ping seq:100072 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 72.0 50 end
+time_received:1500307242.467472 ping seq:100073 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 73 end
+time_received:1500307242.468673 ping seq:100073 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 73.0 50 end
+time_received:1500307242.489451 ping seq:100074 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 74 end
+time_received:1500307242.491062 ping seq:100074 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 74.0 50 end
+time_received:1500307242.508150 ping seq:100075 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 75 end
+time_received:1500307242.509428 ping seq:100075 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 75.0 50 end
+time_received:1500307242.528389 ping seq:100076 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 76 end
+time_received:1500307242.529579 ping seq:100076 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 76.0 50 end
+time_received:1500307242.548530 ping seq:100077 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 77 end
+time_received:1500307242.549617 ping seq:100077 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 77.0 50 end
+time_received:1500307242.568763 ping seq:100078 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 78 end
+time_received:1500307242.569844 ping seq:100078 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 78.0 50 end
+time_received:1500307242.590048 ping seq:100079 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 79 end
+time_received:1500307242.590139 ping seq:100079 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 79.0 50 end
+time_received:1500307242.609701 ping seq:100080 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 80 end
+time_received:1500307242.610332 ping seq:100080 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 80.0 50 end
+time_received:1500307242.631092 ping seq:100081 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 81 end
+time_received:1500307242.631780 ping seq:100081 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 81.0 50 end
+time_received:1500307242.651084 ping seq:100082 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 82 end
+time_received:1500307242.652082 ping seq:100082 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 82.0 50 end
+time_received:1500307242.671396 ping seq:100083 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 83 end
+time_received:1500307242.672515 ping seq:100083 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 83.0 50 end
+time_received:1500307242.693794 ping seq:100084 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 84 end
+time_received:1500307242.695083 ping seq:100084 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 84.0 50 end
+time_received:1500307242.712076 ping seq:100085 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 85 end
+time_received:1500307242.713187 ping seq:100085 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 85.0 50 end
+time_received:1500307242.732449 ping seq:100086 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 86 end
+time_received:1500307242.734551 ping seq:100086 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 86.0 50 end
+time_received:1500307242.752609 ping seq:100087 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 87 end
+time_received:1500307242.754110 ping seq:100087 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 87.0 50 end
+time_received:1500307242.772975 ping seq:100088 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 88 end
+time_received:1500307242.774332 ping seq:100088 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 88.0 50 end
+time_received:1500307242.793580 ping seq:100089 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 89 end
+time_received:1500307242.796053 ping seq:100089 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 89.0 50 end
+time_received:1500307242.813536 ping seq:100090 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 90 end
+time_received:1500307242.815152 ping seq:100090 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 90.0 50 end
+time_received:1500307242.833946 ping seq:100091 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 91 end
+time_received:1500307242.835588 ping seq:100091 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 91.0 50 end
+time_received:1500307242.854120 ping seq:100092 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 92 end
+time_received:1500307242.855662 ping seq:100092 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 92.0 50 end
+time_received:1500307242.876557 ping seq:100093 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 93 end
+time_received:1500307242.876623 ping seq:100093 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 93.0 50 end
+time_received:1500307242.894816 ping seq:100094 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 94 end
+time_received:1500307242.896516 ping seq:100094 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 94.0 50 end
+time_received:1500307242.915168 ping seq:100095 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 95 end
+time_received:1500307242.916773 ping seq:100095 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 95.0 50 end
+time_received:1500307242.962054 ping seq:100096 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 96 end
+time_received:1500307242.962098 ping seq:100096 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 96.0 50 end
+time_received:1500307242.962119 ping seq:100097 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 97 end
+time_received:1500307242.962137 ping seq:100097 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 97.0 50 end
+time_received:1500307242.977649 ping seq:100098 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 98 end
+time_received:1500307242.977689 ping seq:100098 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 98.0 50 end
+time_received:1500307242.996747 ping seq:100099 ip:10.114.56.101:8005 tp:tp_server_entry begin 10 0 10 150 99 end
+time_received:1500307242.997832 ping seq:100099 ip:10.114.56.101:8005 tp:tp_server_exit begin 511 496 354 370 99.0 50 end

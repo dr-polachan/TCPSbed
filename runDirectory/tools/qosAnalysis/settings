@@ -1,0 +1,3 @@
+
+
+list_tp = ['tpf_ms_com_entry', 'tpf_ms_com_exit', 'tpf_srv_entry','tpf_srv_exit','tpf_ss_com_entry', 'tpf_ss_com_exit'] 	# test points to scan

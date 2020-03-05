@@ -1,0 +1,177 @@
+# Testbed Configuration
+
+## forward flow: ms_embsys->ms_com->server->ss_com->ss_embsys
+## backward flow: ms_embsys<-ms_com<-server<-ss_com<-ss_embsys
+
+## testbed mode
+testbed_config_mode ="deployment-mode"
+ 
+## testbed pc settings (deployment mode)
+PC_1 = "10.0.0.1"
+PC_2 = "10.0.0.2"
+PC_3 = "10.0.0.3"
+
+# testbed pc settings (emulation mode)
+#PC_1 = "10.1.1.2"
+#PC_2 = "10.1.1.1"
+#PC_2_iface_1 = "10.1.200.1"
+#PC_3 = "10.1.200.2"
+ 
+## testbed computer interface names (only need when using ns3)
+PC_1_iface_0_label="<network-interface-label>" # ms-com interface connected to emu	     
+PC_2_iface_0_label="<network-interface-label>" # emu interface connected to ms-com
+PC_2_iface_1_label="<network-interface-label>" # emu interface connected to ss-com
+PC_3_iface_0_label="<network-interface-label>" # ss-com interface connected to emu
+ 
+ 
+## testbed modules & testbed computer association
+ms_embsys_app_ip=PC_1
+ms_com_ip=PC_1
+srv_ip=PC_2
+ss_com_ip=PC_3
+ss_embsys_app_ip=PC_3
+ 
+## enable or disable flows (0: disable, 1:enable)
+en_kinematic_link=1
+en_haptic_link=1
+en_audio_link=0
+en_video_link=0
+
+## set link udp ports
+portStart = 6000
+kin_link_0=portStart
+kin_link_1=portStart+1
+kin_link_2=portStart+2
+kin_link_3=portStart+3
+hap_link_0=portStart+4
+hap_link_1=portStart+5
+hap_link_2=portStart+6
+hap_link_3=portStart+7
+audio_link_0=portStart+8
+audio_link_1=portStart+9
+audio_link_2=portStart+10
+audio_link_3=portStart+11
+video_link_0=portStart+12
+video_link_1=portStart+13 
+video_link_2=portStart+14
+video_link_3=portStart+15
+
+## latency analysis udp port
+ping_link=5000
+
+## settings for ms_com 
+ms_com_fwd_flow_kinematic_entry_addr =(ms_com_ip, kin_link_0) 
+ms_com_fwd_flow_kinematic_exit_addr = (srv_ip,kin_link_1) 
+ms_com_fwd_flow_kinematic_entry_mode ="udp" 
+ms_com_fwd_flow_kinematic_exit_mode = "udp" 
+ 
+ms_com_bwd_flow_haptic_entry_addr = (ms_com_ip,hap_link_2) 
+ms_com_bwd_flow_haptic_exit_addr = (ms_embsys_app_ip,hap_link_3)
+ms_com_bwd_flow_haptic_entry_mode = "udp"
+ms_com_bwd_flow_haptic_exit_mode = "udp"  
+ 
+ms_com_bwd_flow_video_entry_addr = (ms_com_ip,video_link_2)
+ms_com_bwd_flow_video_exit_addr = (ms_embsys_app_ip, video_link_3) 
+ms_com_bwd_flow_video_entry_mode = "udp" 
+ms_com_bwd_flow_video_exit_mode ="udp" 
+ 
+ms_com_bwd_flow_audio_entry_addr = (ms_com_ip,audio_link_2) 
+ms_com_bwd_flow_audio_exit_addr =(ms_embsys_app_ip, audio_link_3)
+ms_com_bwd_flow_audio_entry_mode = "udp"
+ms_com_bwd_flow_audio_exit_mode ="udp"
+
+ms_com_bwd_flow_ping_entry_addr = (ms_com_ip,ping_link) #(ip,port)
+ms_com_bwd_flow_ping_entry_mode = "udp" 
+ 
+## settings for srv 
+server_fwd_flow_kinematic_entry_addr = (srv_ip,kin_link_1) #(ip,port)
+server_fwd_flow_kinematic_exit_addr = (ss_com_ip,kin_link_2) #(ip,port)
+server_fwd_flow_kinematic_entry_mode = "udp" 
+server_fwd_flow_kinematic_exit_mode = "udp"
+ 
+server_bwd_flow_haptic_entry_addr = (srv_ip,hap_link_1) #(ip,port)
+server_bwd_flow_haptic_exit_addr = (ms_com_ip,hap_link_2) #(ip,port)
+server_bwd_flow_haptic_entry_mode = "udp"
+server_bwd_flow_haptic_exit_mode = "udp" 
+ 
+server_bwd_flow_video_entry_addr = (srv_ip,video_link_1) #(ip,port)
+server_bwd_flow_video_exit_addr = (ms_com_ip,video_link_2) #(ip,port)
+server_bwd_flow_video_entry_mode = "udp"
+server_bwd_flow_video_exit_mode = "udp"
+ 
+server_bwd_flow_audio_entry_addr = (srv_ip,audio_link_1) #(ip,port)
+server_bwd_flow_audio_exit_addr = (ms_com_ip,audio_link_2) #(ip,port)
+server_bwd_flow_audio_entry_mode = "udp"
+server_bwd_flow_audio_exit_mode = "udp" 
+
+server_bwd_flow_ping_entry_addr = (srv_ip,ping_link) #(ip,port)
+server_bwd_flow_ping_entry_mode = "udp" 
+ 
+## settings for ss_com 
+ss_com_fwd_flow_kinematic_entry_addr = (ss_com_ip,kin_link_2) #(ip,port)
+ss_com_fwd_flow_kinematic_exit_addr = (ss_embsys_app_ip,kin_link_3)
+ss_com_fwd_flow_kinematic_entry_mode = "udp" 
+ss_com_fwd_flow_kinematic_exit_mode = "udp"
+ 
+ss_com_bwd_flow_haptic_entry_addr = (ss_com_ip,hap_link_0) #(ip,port)
+ss_com_bwd_flow_haptic_exit_addr = (srv_ip,hap_link_1)
+ss_com_bwd_flow_haptic_entry_mode = "udp"
+ss_com_bwd_flow_haptic_exit_mode = "udp"
+ 
+ss_com_bwd_flow_video_entry_addr = (ss_com_ip, video_link_0)
+ss_com_bwd_flow_video_exit_addr = (srv_ip,video_link_1) #(ip,port)
+ss_com_bwd_flow_video_entry_mode ="udp"
+ss_com_bwd_flow_video_exit_mode = "udp" 
+ 
+ss_com_bwd_flow_audio_entry_addr = (ss_com_ip, audio_link_0)
+ss_com_bwd_flow_audio_exit_addr = (srv_ip,audio_link_1) #(ip,port)
+ss_com_bwd_flow_audio_entry_mode = "udp"
+ss_com_bwd_flow_audio_exit_mode = "udp" 
+
+ss_com_bwd_flow_ping_entry_addr = (ss_com_ip,ping_link) #(ip,port)
+ss_com_bwd_flow_ping_entry_mode = "udp"
+
+## Network Emulator Configuration 
+ns3_EmulatedLinkBandwidth='1000Mbps'						# 'Mbps', 'Kbps', 'bps'
+ns3_EmulatedLinkDelay='0ms'							# 'ms' eg: 10ms
+ns3_PacketErrorModel='RateErrorModel'
+ns3_PacketErrorRate_percent='0'							# eg: for 20%, specify '0.2'
+ns3_NS3EmulatorPath="<ns3-emulator-path>"
+
+ns3_SimulatedTrafficDirection = 'None' 						# 'fwd','bwd','fwd/bwd','None'
+ns3_SimulatedTrafficMode = 'tcp' 						# 'tcp','udp'
+ns3_SimulatedTrafficType = 'const'; 						# 'const', 'NaN'
+ns3_SimulatedTraffic_Rate = '1Kbps'; 						# 'Mbps', 'Kbps', 'bps' eg: 10Mbps
+ns3_SimulatedTraffic_PacketSize = "100";					# in bytes eg: 100
+
+ns3_EdgeLinkType = 'p2p'							# 'p2p', 'wifi'
+ns3_WifiAPtoStationDistanceInMeters = '10'					# Wifi AP to Station distance in meters eg: 10      
+
+
+## VREP Configuration 
+
+vrep_path="/home/kurian/Documents/V-REP_PRO_EDU_V3_6_0_Ubuntu18_04/vrep.sh" 
+vrep_scene = "scenePhantomXGeneric.ttt"						# vrep scenes are located in runDirectory/vrep/
+ 
+## END 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
