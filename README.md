@@ -23,7 +23,7 @@ ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 # Testbed Component Placement (in Mininet)
 - ms-embsys-app-mouseController is run on ms-com
 - ss-embsys-app-vrep is run on ss-com
-- the delay, bandwidth and traffic of the links can be parameterized by editing the file TCPSbed/mininetScript/settings
+- To edit the delay, bandwidth and traffic of the links, change the default settings in the file TCPSbed/mininetScript/settings
 
 ![gitTestbedComponentPlacement](https://user-images.githubusercontent.com/48801729/75961647-65b4e900-5ee8-11ea-8c83-7cf4760f2347.png)
 
