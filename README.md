@@ -19,5 +19,5 @@ v1.0 (Description): Demonstrates basic testbed operation. Operator uses a USB mo
 *scikits.bootstrap $pip install scikits.bootstrap
 
 # Testbed Component Placement
-
+![gitTestbedComponentPlacement](https://user-images.githubusercontent.com/48801729/75961647-65b4e900-5ee8-11ea-8c83-7cf4760f2347.png)
 
