@@ -39,3 +39,7 @@ Python v2.7; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 - The force experienced by the robot when it hits an object is fedback to ms-com. The value is displayed in the ms-com terminal. 
 
 ![tcpsOperaton](https://user-images.githubusercontent.com/48801729/75965935-89c7f880-5eef-11ea-896b-19dbf08212e5.png)
+
+# Publications
+[1] Kurian Polachan, T Venkata Prabhakar, Chandramani Singh, Fernando A. Kuipers, "Towards an Open Testbed for Tactile Cyber Physical Systems", 11th 11th International Conference on COMmunication Systems & NETworkS, COMSNETS 2019 at Bangalore, India.
+
