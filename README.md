@@ -37,3 +37,5 @@ Python v2.7; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
   - Mouse movements in X-Y direction is mapped to robot X-Y axis.  Y  movement  of  the  mouse,  while  the  left  button is pressed is mapped to the Z axis of the robot.
   - Use scroll wheel to open and close the pincher. 
 - The force experienced by the robot when it hits an object is fedback to ms-com. The value is displayed in the ms-com terminal. 
+
+![tcpsOperaton](https://user-images.githubusercontent.com/48801729/75965935-89c7f880-5eef-11ea-896b-19dbf08212e5.png)
