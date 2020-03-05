@@ -34,4 +34,4 @@ ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
   - Right click the mouse to start the mouse control. Right click again to stop the mouse control
   - Mouse movements in X-Y direction is mapped to robot X-Y axis.  Y  movement  of  the  mouse,  while  the  left  button is pressed is mapped to the Z axis of the robot.
   - Use scroll wheel to open and close the pincher. 
-- The force experienced by the robot when it hits an object is feedback to ms-com and displayed in the ms-com terminal. 
+- The force experienced by the robot when it hits an object is fedback to ms-com. The value is displayed in the ms-com terminal. 
