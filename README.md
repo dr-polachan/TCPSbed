@@ -4,7 +4,7 @@ A Modular Testbed for Tactile Internet based Cyber-Physical Systems
 v1.0 (Description): Demonstrates basic testbed operation. Operator uses a USB mouse to control a robot simulated in VREP. Force feedback received from the robot side is printed at the ms-com terminal. Testbed components ms-com, srv, ss-com and embys-apps are run on different  hosts simulated in Mininet.
 
 ```diff
-- Note: This is a demo version of TCPSbed. Only kinematic and haptic flows are supported in this version, support to other flows will be added later. Only ms-embsys-app-mouseController and ss-embsys-vrep are supported in this version, support to other embsys-apps will be added soon.
+- Note: This is a demo version of TCPSbed. Only kinematic and haptic flows are supported in this version, support for other flows will be added later. Only ms-embsys-app-mouseController and ss-embsys-vrep are supported in this version, support for other embsys-apps will be added later.
 ```
 
 # Package Requirements
