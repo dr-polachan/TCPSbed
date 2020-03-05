@@ -1,8 +1,8 @@
 
-### Traffic Settings (re-run Mininet)
+### traffic settings 
 trafficBandwidth = "250K"                         # "1" => 1bits per second. Do not give in decimals
 
-### Mininet Network Link settings (re-run Mininet)
+### mininet network link settings 
 linkConfig_s0s1 = {'delay':'0.2ms', 'bw' : 11, 'use_htb':'True'}
 linkConfig_s0s5 = {'delay':'0.2ms', 'bw' : 11, 'use_htb':'True'}
 linkConfig_s1s2 = {'delay':'0.2ms', 'bw' : 10, 'use_htb':'True'}

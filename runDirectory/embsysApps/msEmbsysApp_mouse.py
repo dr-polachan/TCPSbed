@@ -14,8 +14,8 @@ execfile("./src/server_settings.py")
 axis_x = 0
 axis_y = 0
 axis_z = 0
-button_left = 0 # 1 if pressed
-button_right = 0 # 1 if pressed
+button_left = 0 
+button_right = 0 
 scroll = 0
 
 obj_tx = [None]
@@ -72,9 +72,7 @@ def on_click(x, y, button, pressed):
     if((button == button.right) and (pressed == False)):
         button_right = 0
 
-    #if(button == button.right):
-        #return False
-    
+   
     print axis_x,axis_y,axis_z,button_left,button_right,scroll
     
     msg = message_format(axis_x,axis_y,axis_z,button_left,button_right,scroll)
@@ -105,25 +103,21 @@ def on_scroll(x, y, dx, dy):
 
 if __name__ == '__main__':        
 
-    #global address_tx
-    #global mode_tx
-    #global obj_tx
-    print "DEBUG"
     
-    ### defining tx address/mode
+    
+    # defining tx address/mode
     address_tx = (ms_com_ip,kin_link_0)
     mode_tx = "udp"
     
-    ### initialization    
-    #global obj_tx
+    # initialization    
     obj_tx = transfers.init_tx(address_tx,mode_tx)
         
-    # Collect events until released
+    # collect events until released
     with mouse.Listener(
             on_move=on_move,
             on_click=on_click,
             on_scroll=on_scroll) as listener:
         listener.join()
     
-    ### closing    
+    # exit
     transfers.close(obj_tx)

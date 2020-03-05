@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
 import transfers1.rev1 as transfers
-
-
 import pickle
 import numpy as np
 import pyaudio
-
 import codec.audiovideo
 import codec.audio
 
@@ -22,7 +19,7 @@ def backward_flow_audio():
     obj_rx = transfers.init_rx(address_rx,mode_rx)
     
     while (1):
-    #for myvar in range (2):
+
         print "live_sscom_bwd_audio",time.time()
 	
 	## receiving data from microphone
@@ -32,7 +29,7 @@ def backward_flow_audio():
     	transfers.send(obj_tx,msg)
 	          
     transfers.close(obj_tx)
-    #transfers.close(obj_rx)
+    transfers.close(obj_rx)
     return
 
 

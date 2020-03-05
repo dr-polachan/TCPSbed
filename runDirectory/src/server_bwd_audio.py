@@ -1,17 +1,9 @@
 #!/usr/bin/env python
 
 import transfers1.rev1 as transfers
-
 import codec.generic
 import codec.audiovideo
 import codec.audio
-
-
-
-### forward flow engine
-#def test():
-#    while(1):
-#        print "ping"
 
 def backward_flow_audio(): 
     print "hedfdad" 
@@ -26,8 +18,7 @@ def backward_flow_audio():
     obj_rx = transfers.init_rx(address_rx,mode_rx)
     
     while (1):
-    #for myvar in range (2):
-        print "live_srv_bwd_audiovisual",time.time()
+        print "live_srv_bwd_audio",time.time()
         
         ### receive
         msg = transfers.receive(obj_rx)

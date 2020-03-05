@@ -4,9 +4,7 @@ import transfers1.rev1 as transfers
 import algorithms.test.ping as ping
 from time import sleep
 import codec.generic
-import codec.cyber_glove
-import algorithms.kinematics.mouse_controller
-import algorithms.kinematics.hapticGlove
+
 
 def forward_flow_kinematic():     
     ### defining in/out address/mode
@@ -23,33 +21,11 @@ def forward_flow_kinematic():
         print "live_mscom_fwd",time.time()
 
         ### receive message
-        msg = transfers.receive(obj_rx) #msg=> (x,y,z,button-left,button-right,scroll-wheel)
+        msg = transfers.receive(obj_rx)
         msg = ping.echo_back_rev2(msg,"tpf_ms_com_entry", address_rx)
 
         ### decode message
-	msg_list = codec.generic.decode(msg) #msg_list = (x,y,z,pitch,pincher) 
-	print msg_list
-	#print msg_list
-
-	### kinematics algorithm
-
-		#msg_list = msg_list # for demonstrating step response
-		#msg_list = msg_list # for demonstrating robot actuation delay
-
-		#msg_list = algorithms.kinematics.hapticGlove.rev1(msg_list) # return => (wristX, wristY, wristZ, palmPitch, palmPincher) for phantomX
-		
-		#print "result: ", msg_list
-
-	#msg_list = algorithms.kinematics.mouse_controller.revGeneric(msg_list) # return: msg-list => (x,y,z,pitch=0,pincher), to use with mouse controller
-		#print "debug", msg_list
-		#msg_list = algorithms.kinematics.mouse_controller.rev1(msg_list) # msg-list => (x,y,z,pitch=0,pincher) for phantomX
-		#msg_list = algorithms.kinematics.mouse_controller.rev_testmode(msg_list) # msg-list => (x,y,z,pitch=0,pincher) for generic use
-		
-		#print "result", msg_list
-		#print "out",msg_list
-		#msg_list = codec.cyber_glove.decode_vMtech(msg) #msg_list = (x,y,z,pitch,pincher)        
-		#msg_list = codec.generic.decode(msg) #msg_list = (x,y,z,pitch,pincher) 
-		#msg_list = algorithms.mouse.calibration(msg_list)
+	msg_list = codec.generic.decode(msg) 
                 	
         ### code message        
         msg = codec.generic.codev2(msg,msg_list)

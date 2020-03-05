@@ -1,19 +1,12 @@
 #!/usr/bin/env python
 
 import transfers1.rev1 as transfers
-
 import codec.generic
 import codec.audiovideo
 
 
-
-### forward flow engine
-#def test():
-#    while(1):
-#        print "ping"
-
 def backward_flow_video(): 
-    print "hedfdad" 
+
     ### defining in/out address/mode
     address_rx = server_bwd_flow_video_entry_addr
     address_tx = server_bwd_flow_video_exit_addr    
@@ -30,12 +23,6 @@ def backward_flow_video():
         
         ### receive
         msg = transfers.receive(obj_rx)
-	
-        ### decode
-        #msg = codec.audiovideo.decode(msg)             
-        
-        ### encode
-        #msg = codec.audiovideo.code(msg)
 
         ### send
         transfers.send(obj_tx,msg)

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import codec.generic
-import codec.cyber_glove
 import transfers1.rev1 as transfers
 import pickle
 import cv2

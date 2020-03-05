@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
 import transfers1.rev1 as transfers
-
-
 import pickle
 import numpy as np
 import cv2
-
 import codec.audiovideo
 
 def backward_flow_video():    
@@ -21,7 +18,7 @@ def backward_flow_video():
     obj_rx = transfers.init_rx(address_rx,mode_rx)
 
     while (1):
-    #for myvar in range (2):
+
         print "live_sscom_bwd_video",time.time()
 	
 	## receiving data from embsys_app_videocamera

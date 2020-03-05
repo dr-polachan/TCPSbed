@@ -4,9 +4,7 @@ import transfers1.rev1 as transfers
 import algorithms.test.ping as ping
 from time import sleep
 import codec.generic
-import codec.cyber_glove
-import algorithms.kinematics.mouse_controller
-import algorithms.kinematics.hapticGlove
+
 
 def backward_flow_ping():     
     ### defining in/out address/mode

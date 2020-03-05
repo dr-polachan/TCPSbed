@@ -113,7 +113,6 @@ def myLoadTestbedComponents(net):
 
     print "*** Loading Testbed Components (START) >>>"
 
-    # xterm mode	
     net.get('hTEM').cmd("cd  ../runDirectory/; sudo nohup ./scripts/master &")
     net.get('hServer').cmd("cd  ../runDirectory/; sudo nohup ./scripts/server &") 
     net.get('hTES').cmd("cd  ../runDirectory/; sudo nohup ./scripts/slave")    

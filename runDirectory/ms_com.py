@@ -16,7 +16,7 @@ execfile("./src/ms_com_bwd_ping.py")
 ### multiprocessing
 if __name__ == '__main__':
 
-	# fwd channel
+	# forward channel
     	f1 = multiprocessing.Process(target=forward_flow_kinematic)
     	# backward channel
     	b1 = multiprocessing.Process(target=backward_flow_haptic)

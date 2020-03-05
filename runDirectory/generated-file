@@ -131,7 +131,7 @@ ss_com_bwd_flow_audio_exit_mode = "udp"
 ss_com_bwd_flow_ping_entry_addr = (ss_com_ip,ping_link) #(ip,port)
 ss_com_bwd_flow_ping_entry_mode = "udp"
 
-## Network Emulator Configuration 
+## settings for ns3
 ns3_EmulatedLinkBandwidth='1000Mbps'						# 'Mbps', 'Kbps', 'bps'
 ns3_EmulatedLinkDelay='0ms'							# 'ms' eg: 10ms
 ns3_PacketErrorModel='RateErrorModel'
@@ -149,7 +149,6 @@ ns3_WifiAPtoStationDistanceInMeters = '10'					# Wifi AP to Station distance in 
 
 
 ## VREP Configuration 
-
 vrep_path="/home/kurian/Documents/V-REP_PRO_EDU_V3_6_0_Ubuntu18_04/vrep.sh" 
 vrep_scene = "scenePhantomXGeneric.ttt"						# vrep scenes are located in runDirectory/vrep/
  

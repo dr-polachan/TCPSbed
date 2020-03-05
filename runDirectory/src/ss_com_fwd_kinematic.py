@@ -27,9 +27,6 @@ def forward_flow_kinematic():
 
 	### decode message
 	msg_list = codec.generic.decode(msg) 
-
-	### append checksum
-	#msg_list = algorithms.checksum.basic.rev1(msg_list) #when using real phantomX hardware
 	
 	### encode message
         msg = codec.generic.codev2(msg,msg_list)

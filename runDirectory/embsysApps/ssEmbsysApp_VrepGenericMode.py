@@ -24,7 +24,7 @@ else:
     print ('Connection not Established')
     sys.exit('error could not connect')  
 
-# Getting a Handle for the Joint 
+### Getting a Handle for the Joint 
 errorcode, jointHandle_1 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint1',vrep.simx_opmode_blocking)
 errorcode, jointHandle_2 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint2',vrep.simx_opmode_blocking)
 errorcode, jointHandle_3 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint3',vrep.simx_opmode_blocking)
@@ -73,9 +73,6 @@ def vrepControl():
 	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_4, jointAngle4*3.14/180, vrep.simx_opmode_streaming)
 	errorcode = vrep.simxSetIntegerSignal(clientID,'PhantomXPincher_gripperClose',gripperPosition,vrep.simx_opmode_oneshot)
 	
-	##
-	#time.sleep(200e-3)
-
 	### reading haptic data
 	[errorcode, dataForce] = vrep.simxGetJointForce(clientID,jointHandle_4,vrep.simx_opmode_streaming)
 	dataForce = -1*dataForce
@@ -93,7 +90,6 @@ def vrepControl():
 
 	### coding haptic data
 	msg_list = [dataForce]
-	#msg = codec.generic.code(msg_list)
         msg = codec.generic.codev2(msg,msg_list)
 	        
         ### send the message
