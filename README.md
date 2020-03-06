@@ -22,6 +22,9 @@ Python v2.7; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 ;scipy $pip install -U scipy
 ;scikits.bootstrap $pip install scikits.bootstrap
 
+# VREP Integration
+VREP is a simulator platform for robots. For demonstration of the testbed we need to install VREP. First, download VREP from https://www.coppeliarobotics.com/downloads and extract it to a folder. Next, update the parameter 'vrep_path' to correspond to the path of the executable 'vrep.sh'
+
 # Demonstration
 
 ## Testbed Component Placement (in Mininet)
