@@ -23,6 +23,7 @@ Python v2.7; mininet $sudo apt-get install mininet; ffmpeg, libav-tools $sudo ap
 ;mss sudo python -m pip install mss==3.1.2
 ;scipy $pip install -U scipy
 ;scikits.bootstrap $pip install scikits.bootstrap
+;sudo apt install libgl1-mesa-dev
 
 # VREP Integration
 VREP is a simulator platform for robots. For demonstration of the testbed we need to install VREP. First, download VREP v3.6.0 from https://www.coppeliarobotics.com/downloads and extract it to a folder. Next, update the parameter 'vrep_path' in TCPSbed/runDirectory/generated_file to correspond to the path of the executable 'vrep.sh'
