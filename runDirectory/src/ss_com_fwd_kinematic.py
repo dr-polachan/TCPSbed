@@ -3,7 +3,6 @@
 import transfers1.rev1 as transfers
 import algorithms.checksum.basic
 import codec.generic
-import algorithms.compression.kees
 import algorithms.test.ping as ping
 import time
    

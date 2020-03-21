@@ -149,7 +149,7 @@ ns3_WifiAPtoStationDistanceInMeters = '10'					# Wifi AP to Station distance in 
 
 
 ## VREP Configuration 
-vrep_path="/home/kurian/Documents/V-REP_PRO_EDU_V3_6_0_Ubuntu18_04/vrep.sh" 
+vrep_path="/home/kpol/Documents/V-REP_PRO_EDU_V3_6_0_Ubuntu18_04/vrep.sh" 
 vrep_scene = "scenePhantomXGeneric.ttt"						# vrep scenes are located in runDirectory/vrep/
  
 ## END 
