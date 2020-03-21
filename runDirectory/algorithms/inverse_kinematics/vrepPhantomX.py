@@ -20,18 +20,18 @@ def py_fsolve(msg_list):
     pitch = float(msg_list[3])
     pincher = int(msg_list[4])
     
-    ### robotic arm length
+    # robotic arm length
     l1=5; 
     l2=15;
     l3=15;
    	 
-    ### checking for out of coverage, see mtech paper
+    # checking for out of coverage, see mtech paper
     if ((z-l1)**2 + x**2 + y**2 > (l2+l3)**2):
 	flagCoverageViolation = 1		       
     else:	     	
 	flagCoverageViolation = 0	   
        
-    ### i-kinematics    
+    # i-kinematics    
     def equations(p):
         x1, x2, x3 = p
 
@@ -43,15 +43,9 @@ def py_fsolve(msg_list):
         
         return (f)
 
-    ## solution finder	
-    #result = fsolve(equations,(1,1,1))
+    # solution finder	
     result = fsolve(equations,(1,1,1),xtol=.01)
-    #[jointAngle1, jointAngle2, jointAngle3, jointAngle4, gripperPos] = solution_listOld
-    #x1 = jointAngle1*3.14/180	
-    #x2 = jointAngle1*3.14/180
-    #x3 = jointAngle1*3.14/180
-    #result = fsolve(equations,(x1,x2,x3))	
-
+	
     # converting to degrees
     x1 = result[0]*180/3.14
     x2 = result[1]*180/3.14
@@ -61,7 +55,7 @@ def py_fsolve(msg_list):
     theta2 = x2;
     theta3 = x3;
 	
-    theta4 = 90-(theta2+theta3) # to keep pitch always horizontal to base
+    theta4 = 90-(theta2+theta3) # ensure pitch is always horizontal to base
 	    
     jointAngle1 = (int)(theta1);  # base rotation
     jointAngle2 = (int)(theta2);  
@@ -71,7 +65,7 @@ def py_fsolve(msg_list):
     gripperPos = (int) (pincher); # gripper pos to be between 0 (full-close) and 100 (full-open)
     gripperPos = (int) (gripperPos) #if 0=> Full Close, 100=>Full Open
 
-    ## check for joint constraints
+    # check for joint constraints
     if(flagCoverageViolation == 1):
 	print "out of coverage"
 	[jointAngle1, jointAngle2, jointAngle3, jointAngle4, gripperPos] = solution_listOld
@@ -94,12 +88,9 @@ def py_fsolve(msg_list):
     else:
 	flagConstrainViolation = 0	
 	
-    ## backup
     if(flagConstrainViolation == 0 and flagCoverageViolation == 0):
 	solution_listOld = [jointAngle1, jointAngle2, jointAngle3, jointAngle4, gripperPos]	
     
     return(jointAngle1,jointAngle2,jointAngle3,jointAngle4,gripperPos) 
 
-#if __name__ == '__main__':
-#    print py_fsolve([10,0,15,2,3])
-#    print py_fsolve([34,-2,1,2,3])
+

@@ -2,13 +2,10 @@
 
 from pynput import mouse  
 import os, sys
-
 lib_path = os.path.abspath(os.path.join(__file__,'..','..'))	
 print lib_path
 sys.path.append(lib_path)
-
 import transfers1.rev1 as transfers
-
 execfile("./src/server_settings.py")
 
 axis_x = 0
@@ -101,15 +98,12 @@ def on_scroll(x, y, dx, dy):
     msg = message_format(axis_x,axis_y,axis_z,button_left,button_right,scroll)
     transfers.send(obj_tx,msg)    
 
-if __name__ == '__main__':        
-
-    
-    
+if __name__ == '__main__':         
     # defining tx address/mode
     address_tx = (ms_com_ip,kin_link_0)
     mode_tx = "udp"
     
-    # initialization    
+    # initialize 
     obj_tx = transfers.init_tx(address_tx,mode_tx)
         
     # collect events until released

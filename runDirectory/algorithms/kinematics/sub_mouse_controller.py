@@ -40,7 +40,6 @@ y_out_init = 120 #(y is the x for phantom_x)
 z_out_init = 120 # (z is the z)
 
 def state_fun_0(msg):
-    #print "read, :",msg
     global x_off
     global y_off
     global z_off
@@ -59,7 +58,6 @@ def state_fun_0(msg):
     global z_out_init
     global y_out_init
 
-    #print"code is entering state 0"
     btn = [0,0]
     ret = []
     btn = msg[3]
@@ -68,11 +66,9 @@ def state_fun_0(msg):
     x = msg[0]
     y = msg[1]
     scroll = msg[2]    
-    #print right
-    x_out = x_out_init #0
-    y_out = y_out_init #0
-    z_out = z_out_init #0    
-    #scroll_out = 0
+    x_out = x_out_init 
+    y_out = y_out_init 
+    z_out = z_out_init   
     scroll_out = scroll
 
     if(right == 1):        
@@ -100,7 +96,6 @@ def state_fun_1(msg):
     global x_out_init 
     global z_out_init
     global y_out_init
-    #print"code is entering state 1"
     btn = [0,0]
     ret = []
     btn = msg[3]
@@ -111,7 +106,6 @@ def state_fun_1(msg):
     scroll = msg[2]
     x_off = msg[0]
     y_off = msg[1]  
-    #scroll_offset = msg[2]
     scroll_offset = 0
 	
     x_out = x_out_init #0
@@ -119,7 +113,6 @@ def state_fun_1(msg):
     z_out = z_out_init #0
 
     scroll_out = 0
-    #print "scroll_offset1", scroll_offset
     if(right == 0):
         state = 2
     ret = [x_out,y_out,z_out,scroll_out]
@@ -346,15 +339,12 @@ def state_fun_7(msg):
 	print "state 7 is reached"
 	
     	ret = state_fun_0(msg)
-
-	#ret = [x_out,y_out,z_out,scroll]
     
 	state = 0
 	return(ret)
 
 def controller(msg):
     global state
-    #print "controller state", state
     if(state == 0):
         ret = state_fun_0(msg)
         return(ret)

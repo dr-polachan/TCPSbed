@@ -1,6 +1,6 @@
 
 ### traffic settings 
-trafficBandwidth = "250K"                         # "1" => 1bits per second. Do not give in decimals
+trafficBandwidth = "250K"	# "1" => 1bits per second. Do not give in decimals
 
 ### mininet network link settings 
 linkConfig_s0s1 = {'delay':'0.2ms', 'bw' : 11, 'use_htb':'True'}
