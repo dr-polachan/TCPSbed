@@ -12,7 +12,7 @@ v1.0 (Description): Demonstrates basic testbed operation. Operator uses a USB mo
 # Package Requirements
 Python v2.7; mininet $sudo apt-get install mininet; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 ;pyaudio $sudo pip install pyaudio
-;pyinput $sudo python -m pip install pynput = 1.1.7 
+;pyinput $sudo python -m pip install pynput == 1.1.7 
 ;python-xlib $sudo apt-get install  python-xlib
 ;net-tools $sudo apt install net-tools
 ;libasound-dev portaudio19-dev libportaudio2 libportaudiocpp0 $sudo apt-get install libasound-dev portaudio19-dev libportaudio2 libportaudiocpp0
