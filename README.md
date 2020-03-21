@@ -10,7 +10,7 @@ v1.0 (Description): Demonstrates basic testbed operation. Operator uses a USB mo
 ```
 
 # Package Requirements
-Python v2.7; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
+Python v2.7; mininet $sudo apt-get install mininet; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 ;pyaudio $sudo pip install pyaudio
 ;pyinput $sudo python -m pip install pynput = 1.1.7 
 ;python-xlib $sudo apt-get install  python-xlib
@@ -25,7 +25,7 @@ Python v2.7; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
 ;scikits.bootstrap $pip install scikits.bootstrap
 
 # VREP Integration
-VREP is a simulator platform for robots. For demonstration of the testbed we need to install VREP. First, download VREP from https://www.coppeliarobotics.com/downloads and extract it to a folder. Next, update the parameter 'vrep_path' to correspond to the path of the executable 'vrep.sh'
+VREP is a simulator platform for robots. For demonstration of the testbed we need to install VREP. First, download VREP v3.6.0 from https://www.coppeliarobotics.com/downloads and extract it to a folder. Next, update the parameter 'vrep_path' in TCPSbed/runDirectory/generated_file to correspond to the path of the executable 'vrep.sh'
 
 # Demonstration
 
