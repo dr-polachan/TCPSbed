@@ -1,6 +1,6 @@
 import socket
-import re #regular expression
-execfile("generated-file")
+import re 
+execfile("config")
 
 obj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 

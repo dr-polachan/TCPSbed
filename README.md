@@ -26,7 +26,7 @@ Python v2.7; mininet $sudo apt-get install mininet; ffmpeg, libav-tools $sudo ap
 ;sudo apt install libgl1-mesa-dev
 
 # VREP Integration
-VREP is a simulator platform for robots. For demonstration of the testbed we need to install VREP. First, download VREP v3.6.0 from https://www.coppeliarobotics.com/downloads and extract it to a folder. Next, update the parameter 'vrep_path' in TCPSbed/runDirectory/generated_file to correspond to the path of the executable 'vrep.sh'
+VREP is a simulator platform for robots. For demonstration of the testbed we need to install VREP. First, download VREP v3.6.0 from https://www.coppeliarobotics.com/downloads and extract it to a folder. Next, update the parameter 'vrep_path' in TCPSbed/runDirectory/config to correspond to the path of the executable 'vrep.sh'
 
 # Demonstration
 
@@ -38,7 +38,7 @@ VREP is a simulator platform for robots. For demonstration of the testbed we nee
 ![gitTestbedComponentPlacement](https://user-images.githubusercontent.com/48801729/75961647-65b4e900-5ee8-11ea-8c83-7cf4760f2347.png)
 
 - To run the testbed, go to the folder mininetScript and run the command $sudo python mininetScript.py
-- Wait for the xterm/windows ms-com, ss-com, srv, VREP and ms-embsys-app-mouseController and ss-embsys-app-vrep to pop up
+- Wait for the xterm/windows ms-com, ss-com, srv, v-rep and ms-embsys-app-mouseController and ss-embsys-app-vrep to pop up
 - Now use the mouse to control the PhantomX robot simulated in VREP
   - Right click the mouse to start the mouse control. Right click again to stop the mouse control
   - Mouse movements in X-Y direction is mapped to robot X-Y axis.  Y  movement  of  the  mouse,  while  the  left  button is pressed is mapped to the Z axis of the robot.

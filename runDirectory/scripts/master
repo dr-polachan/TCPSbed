@@ -1,7 +1,7 @@
 #!/bin/bash
 xhost +
-xterm -title "msEmbsysApp_mouse" -hold -e "sudo python embsysApps/msEmbsysApp_mouse.py" &
-xterm -title "ms_com" -hold -e "sudo python ms_com.py" 
+xterm -title "ms-embsys-app-mouseController" -hold -e "sudo python embsys-apps/ms-embsys-app-mouseController.py" &
+xterm -title "ms-com" -hold -e "sudo python ms-com.py" 
 
 
 

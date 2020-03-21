@@ -1,9 +1,9 @@
 #!/bin/bash
 
-xterm -title "slave" -hold -e "sudo python ss_com.py" &
-xterm -title "vrepLoader" -hold -e "sudo python vrep/vrepLoader.py" &
+xterm -title "slave" -hold -e "sudo python ss-com.py" &
+xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &
 sleep 30
-xterm -title "ssEmbsysApp_vrep" -hold -e "sudo python embsysApps/ssEmbsysApp_VrepGenericMode.py" 
+xterm -title "ss-embsys-app-vrep" -hold -e "sudo python embsys-apps/ss-embsys-app-vrep.py" 
 
 
 
