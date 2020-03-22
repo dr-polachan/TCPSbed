@@ -8,6 +8,8 @@ v1.0 (Description): Demonstrates basic testbed operation. Operator uses a USB mo
 ```diff
 - Note: This is a demo version of TCPSbed. Only kinematic and haptic flows are supported in this version, support for other flows will be included soon. Only ms-embsys-app-mouseController and ss-embsys-vrep are supported in this version, support for other embsys-apps will be included soon.
 ```
+# OS Requirement
+Ubuntu 18.04
 
 # Package Requirements
 Python v2.7; mininet $sudo apt-get install mininet; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
