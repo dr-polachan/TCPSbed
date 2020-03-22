@@ -5,7 +5,7 @@ import os, sys
 lib_path = os.path.abspath(os.path.join(__file__,'..','..'))	
 print lib_path
 sys.path.append(lib_path)
-import transfers1.rev1 as transfers
+import transfers.rev1 as transfers
 execfile("./src/server_settings.py")
 
 axis_x = 0

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import codec.generic
-import transfers1.rev1 as transfers
+import transfers.rev1 as transfers
 import algorithms.test.ping as ping
 
 ### forward flow engine

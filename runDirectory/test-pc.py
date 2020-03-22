@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-import transfers.udp
-import transfers.file
+import transfers_A.udp
+import transfers_A.file
 import multiprocessing 
 from multiprocessing import Process, Queue
 import time

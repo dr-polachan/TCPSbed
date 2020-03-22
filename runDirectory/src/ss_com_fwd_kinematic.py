@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import transfers1.rev1 as transfers
+import transfers.rev1 as transfers
 import algorithms.checksum.basic
 import codec.generic
 import algorithms.test.ping as ping

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import transfers1.rev1 as transfers
+import transfers.rev1 as transfers
 import algorithms.test.ping as ping
 from time import sleep
 import codec.generic

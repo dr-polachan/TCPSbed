@@ -2,7 +2,7 @@
 
 import algorithms.inverse_kinematics.vrepPhantomX
 import codec.generic
-import transfers1.rev1 as transfers
+import transfers.rev1 as transfers
 import algorithms.test.ping as ping
 import algorithms.kinematics.mouse_controller
 
