@@ -1,4 +1,4 @@
-# TCPSbed (v1.0) 
+# TCPSbed (v1.0) [Supported Platform Ubuntu 18.04]
 A Modular Testbed for Tactile Internet based Cyber-Physical Systems
 
 ![architecture](https://user-images.githubusercontent.com/48801729/76053561-9bfb7280-5f93-11ea-9f3b-4a4e6dd20639.png)
