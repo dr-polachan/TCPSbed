@@ -9,7 +9,7 @@ lib_path = os.path.abspath(os.path.join(__file__,'..','..'))
 sys.path.append(lib_path)
 
 
-import transfers1.rev1 as transfers
+import transfers.rev1 as transfers
 import codec.generic
 import algorithms.test.ping as ping
 

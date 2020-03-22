@@ -4,6 +4,7 @@ import cv2
 import pyaudio
 import numpy as np
 import mss
+#from gi.repository import Gdk
 
 def init_tx(address_tx,mode_tx): 
     if(mode_tx == "udp"):
@@ -25,10 +26,13 @@ def send(obj_tx,msg):
     
     if(msg == "NULL"):
         return
+
     if(msg == "NaN"):
-	return  
+	return
+    
     if(mode_tx == "udp"):
         obj.sendto(msg, (address_tx))
+    
     return
     
 def receive(obj_rx):
@@ -37,11 +41,18 @@ def receive(obj_rx):
     mode_rx = obj_rx[2]
         
     if(mode_rx == "udp"):
-        data, addr = obj.recvfrom(60000) 
+        data, addr = obj.recvfrom(60000) # buffer size is 1024 bytes  	
+	
+	
+    return(data)
 
 def close(object): 
-	obj = object[0];
-	obj.close()
+    mode = object[2]
+    if(mode == "microphone"):
+	obj_list = object[0] #object[0] is a list
+	obj = obj_list[0]
+    else:    
+    	obj = object[0];
+    	obj.close()
     return
-    
     
