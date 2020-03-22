@@ -1,4 +1,4 @@
-# TCPSbed (v1.0) [Supported Platform Ubuntu 18.04]
+# TCPSbed (v1.0) 
 A Modular Testbed for Tactile Internet based Cyber-Physical Systems
 
 ![architecture](https://user-images.githubusercontent.com/48801729/76053561-9bfb7280-5f93-11ea-9f3b-4a4e6dd20639.png)
@@ -8,6 +8,8 @@ v1.0 (Description): Demonstrates basic testbed operation. Operator uses a USB mo
 ```diff
 - Note: This is a demo version of TCPSbed. Only kinematic and haptic flows are supported in this version, support for other flows will be included soon. Only ms-embsys-app-mouseController and ss-embsys-vrep are supported in this version, support for other embsys-apps will be included soon.
 ```
+# OS Requirement
+Ubuntu 18.04
 
 # Package Requirements
 Python v2.7; mininet $sudo apt-get install mininet; ffmpeg, libav-tools $sudo apt-get install ffmpeg libav-tools
