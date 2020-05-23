@@ -4,7 +4,6 @@ import cv2
 import pyaudio
 import numpy as np
 import mss
-#from gi.repository import Gdk
 
 def init_tx(address_tx,mode_tx): 
     if(mode_tx == "udp"):
@@ -15,6 +14,12 @@ def init_tx(address_tx,mode_tx):
 def init_rx(address_rx,mode_rx):
     if(mode_rx == "udp"):
         obj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)   
+        obj.bind(address_rx)
+        ret = (obj,address_rx,mode_rx)
+
+    if(mode_rx == "udp-timeout"):
+        obj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)   
+	obj.settimeout(10e-3)
         obj.bind(address_rx)
         ret = (obj,address_rx,mode_rx)
     return(ret)
@@ -36,23 +41,24 @@ def send(obj_tx,msg):
     return
     
 def receive(obj_rx):
-    obj = obj_rx[0];
+    obj = obj_rx[0]
     address_rx = obj_rx[1]
     mode_rx = obj_rx[2]
-        
+
     if(mode_rx == "udp"):
-        data, addr = obj.recvfrom(60000) # buffer size is 1024 bytes  	
-	
+	data, addr = obj.recvfrom(60000) 
+        
+    if(mode_rx == "udp-timeout"):
+	try:
+	    data, addr = obj.recvfrom(60000) 
+	except socket.timeout as e:
+	    data = "NULL"
 	
     return(data)
 
-def close(object): 
-    mode = object[2]
-    if(mode == "microphone"):
-	obj_list = object[0] #object[0] is a list
-	obj = obj_list[0]
-    else:    
-    	obj = object[0];
-    	obj.close()
+def close(object):  
+    obj = object[0]
+    obj.close()
+
     return
     

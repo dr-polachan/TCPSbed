@@ -28,6 +28,7 @@ PC_3_iface_0_label="<network-interface-label>" # ss-com interface connected to e
 ms_embsys_app_ip=PC_1
 ms_com_ip=PC_1
 srv_ip=PC_2
+ss_ei_ip = PC_3
 ss_com_ip=PC_3
 ss_embsys_app_ip=PC_3
  
@@ -43,8 +44,10 @@ kin_link_0=portStart
 kin_link_1=portStart+1
 kin_link_2=portStart+2
 kin_link_3=portStart+3
+kin_link_4=portStart+31
 hap_link_0=portStart+4
-hap_link_1=portStart+5
+hap_link_1_A=portStart+5
+hap_link_1_B=portStart+20
 hap_link_2=portStart+6
 hap_link_3=portStart+7
 audio_link_0=portStart+8
@@ -85,11 +88,11 @@ ms_com_bwd_flow_ping_entry_mode = "udp"
  
 ## settings for srv 
 server_fwd_flow_kinematic_entry_addr = (srv_ip,kin_link_1)
-server_fwd_flow_kinematic_exit_addr = (ss_com_ip,kin_link_2) 
+server_fwd_flow_kinematic_exit_addr = (ss_ei_ip,kin_link_2) 
 server_fwd_flow_kinematic_entry_mode = "udp" 
 server_fwd_flow_kinematic_exit_mode = "udp"
  
-server_bwd_flow_haptic_entry_addr = (srv_ip,hap_link_1) 
+server_bwd_flow_haptic_entry_addr = (srv_ip,hap_link_1_A) 
 server_bwd_flow_haptic_exit_addr = (ms_com_ip,hap_link_2) 
 server_bwd_flow_haptic_entry_mode = "udp"
 server_bwd_flow_haptic_exit_mode = "udp" 
@@ -106,15 +109,25 @@ server_bwd_flow_audio_exit_mode = "udp"
 
 server_bwd_flow_ping_entry_addr = (srv_ip,ping_link) 
 server_bwd_flow_ping_entry_mode = "udp" 
+
+## settings for ss_ei
+kin_entry_addr = (ss_ei_ip,kin_link_2)
+kin_exit_addr = (ss_com_ip,kin_link_3) 
+kin_entry_mode = "udp-timeout" 
+kin_exit_mode =  "udp"
+
+hap_entry_addr = (ss_ei_ip,hap_link_1_B)
+hap_entry_mode = "udp-timeout"
  
 ## settings for ss_com 
-ss_com_fwd_flow_kinematic_entry_addr = (ss_com_ip,kin_link_2)
-ss_com_fwd_flow_kinematic_exit_addr = (ss_embsys_app_ip,kin_link_3)
+ss_com_fwd_flow_kinematic_entry_addr = (ss_com_ip,kin_link_3)
+ss_com_fwd_flow_kinematic_exit_addr = (ss_embsys_app_ip,kin_link_4)
 ss_com_fwd_flow_kinematic_entry_mode = "udp" 
 ss_com_fwd_flow_kinematic_exit_mode = "udp"
  
 ss_com_bwd_flow_haptic_entry_addr = (ss_com_ip,hap_link_0)
-ss_com_bwd_flow_haptic_exit_addr = (srv_ip,hap_link_1)
+ss_com_bwd_flow_haptic_exit_addr_A = (srv_ip,hap_link_1_A)
+ss_com_bwd_flow_haptic_exit_addr_B = (ss_ei_ip,hap_link_1_B)
 ss_com_bwd_flow_haptic_entry_mode = "udp"
 ss_com_bwd_flow_haptic_exit_mode = "udp"
  

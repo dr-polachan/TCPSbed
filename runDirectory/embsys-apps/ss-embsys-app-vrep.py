@@ -36,7 +36,7 @@ def vrepControl():
     dataForce = 0
 
     ### defining in/out address/mode
-    address_rx = (ss_embsys_app_ip, kin_link_3)
+    address_rx = (ss_embsys_app_ip, kin_link_4)
     address_tx = (ss_com_ip, hap_link_0)    
     mode_rx = "udp"
     mode_tx = "udp"
@@ -51,11 +51,9 @@ def vrepControl():
         
         ### receive message
         msg = transfers.receive(obj_rx) 
-        ping.echo_back(msg,"tpf_ss_embsys_entry") #ss_embsys tp's               
         
    	### decode message
 	msg_list = codec.generic.decode(msg) 
-	print msg_list
 	
 	### moving actuators
 	msg_list = map(int, msg_list)
@@ -85,9 +83,6 @@ def vrepControl():
 
 	dataForce = int(100*dataForce)
 	
-
-        print "force", dataForce
-
 	### coding haptic data
 	msg_list = [dataForce]
         msg = codec.generic.codev2(msg,msg_list)
