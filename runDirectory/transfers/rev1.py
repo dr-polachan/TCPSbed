@@ -1,9 +1,5 @@
 import socket
-import serial
-import cv2
-import pyaudio
 import numpy as np
-import mss
 
 def init_tx(address_tx,mode_tx): 
     if(mode_tx == "udp"):

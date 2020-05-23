@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-
 import transfers.rev1 as transfers
-import algorithms.test.ping as ping
 
 ### forward flow engine
 def backward_flow_haptic():   
@@ -22,20 +19,10 @@ def backward_flow_haptic():
         
         ### receive message
         msg = transfers.receive(obj_rx)
-        ping.echo_back(msg,"tpf_ss_embsys_entry") #ss_embsys tp's        
-        ping.echo_back(msg,"tpf_ss_embsys_exit")
-        ping.echo_back(msg,"tpb_ss_embsys_entry")
-        ping.echo_back(msg,"tpb_ss_embsys_exit")
-        ping.echo_back(msg,"tpb_sscom_bwd_entry")
         
-                
         ### send message
 	transfers.send(obj_tx_A,msg); 		
 	transfers.send(obj_tx_B,msg); 								
-        ping.echo_back(msg,"tp_sscom_bwd_exit")    
-        
-    transfers.close(obj_tx)
-    transfers.close(obj_rx)
-    return
+
 
 

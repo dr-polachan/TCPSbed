@@ -1,19 +1,12 @@
-#!/usr/bin/env python
-import os, sys
-import sys
 import time
-import vrep
-import numpy as np
-
+import lib_vrep.vrep as vrep
+import os, sys
 lib_path = os.path.abspath(os.path.join(__file__,'..','..'))	
 sys.path.append(lib_path)
-
-
 import transfers.rev1 as transfers
 import codec.generic
-import algorithms.test.ping as ping
 
-execfile("./src/server_settings.py")
+execfile("./src/global_settings.py")
 
 ### Connecting to vRep
 vrep.simxFinish(-1)
@@ -30,10 +23,7 @@ errorcode, jointHandle_2 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_jo
 errorcode, jointHandle_3 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint3',vrep.simx_opmode_blocking)
 errorcode, jointHandle_4 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint4',vrep.simx_opmode_blocking)
 
-### forward flow engine
 def vrepControl(): 
-    
-    dataForce = 0
 
     ### defining in/out address/mode
     address_rx = (ss_embsys_app_ip, kin_link_4)
@@ -47,7 +37,7 @@ def vrepControl():
 
     
     while (1):
-        print "vrepControl",time.time()
+        print "vrep-control",time.time()
         
         ### receive message
         msg = transfers.receive(obj_rx) 
@@ -57,13 +47,12 @@ def vrepControl():
 	
 	### moving actuators
 	msg_list = map(int, msg_list)
-	print "received", msg_list
 
 	jointAngle1 = msg_list[0]
 	jointAngle2 = msg_list[1]
 	jointAngle3 = msg_list[2]
 	jointAngle4 = msg_list[3]
-	gripperPosition = msg_list[4] #0-100, Full Close=0, Full Open = 100
+	gripperPosition = msg_list[4] #Full Close=0, Full Open = 100
 
 	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_1, jointAngle1*3.14/180, vrep.simx_opmode_streaming)
 	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_2, jointAngle2*3.14/180, vrep.simx_opmode_streaming)
@@ -74,25 +63,15 @@ def vrepControl():
 	### reading haptic data
 	[errorcode, dataForce] = vrep.simxGetJointForce(clientID,jointHandle_4,vrep.simx_opmode_streaming)
 	dataForce = -1*dataForce
-
-	### Restricting pressure between 0 and 100
-	if(dataForce < 0):
-		dataForce = 0
-	if(dataForce > 100):
-		dataForce = 100
-
-	dataForce = int(100*dataForce)
 	
 	### coding haptic data
 	msg_list = [dataForce]
-        msg = codec.generic.codev2(msg,msg_list)
+        msg = codec.generic.code(msg_list)
 	        
         ### send the message
     	transfers.send(obj_tx,msg)
-        ping.echo_back(msg,"tpf_ss_embsys_exit")
-	          
-    transfers.close(obj_tx)
-    transfers.close(obj_rx)
+
+
 
     return
 

@@ -1,6 +1,5 @@
 
-# load files
-execfile("./src/server_settings.py")
+execfile("./src/global_settings.py")
 
 
 

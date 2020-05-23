@@ -1,12 +1,11 @@
-#!/usr/bin/env python
-
 from pynput import mouse  
 import os, sys
 lib_path = os.path.abspath(os.path.join(__file__,'..','..'))	
-print lib_path
 sys.path.append(lib_path)
 import transfers.rev1 as transfers
-execfile("./src/server_settings.py")
+
+execfile("./src/global_settings.py")
+
 
 axis_x = 0
 axis_y = 0
@@ -14,7 +13,6 @@ axis_z = 0
 button_left = 0 
 button_right = 0 
 scroll = 0
-
 obj_tx = [None]
 
 def message_format(axis_x,axis_y,axis_z,button_left,button_right,scroll):
@@ -34,13 +32,11 @@ def on_move(x, y):
     global axis_z
     global button_left
     global button_right
-    global scroll
-    
+    global scroll    
     global obj_tx
 
     axis_x = x
     axis_y = y
-    
     
     print axis_x,axis_y,axis_z,button_left,button_right,scroll
     
@@ -99,14 +95,15 @@ def on_scroll(x, y, dx, dy):
     transfers.send(obj_tx,msg)    
 
 if __name__ == '__main__':         
-    # defining tx address/mode
+
+    ### defining in/out address/mode
     address_tx = (ms_com_ip,kin_link_0)
     mode_tx = "udp"
     
-    # initialize 
+    ### initialization
     obj_tx = transfers.init_tx(address_tx,mode_tx)
         
-    # collect events until released
+    ### run
     with mouse.Listener(
             on_move=on_move,
             on_click=on_click,

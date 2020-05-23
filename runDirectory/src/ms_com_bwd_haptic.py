@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-
 import codec.generic
 import transfers.rev1 as transfers
-import algorithms.test.ping as ping
 
 ### forward flow engine
 def backward_flow_haptic():     
@@ -31,9 +28,6 @@ def backward_flow_haptic():
         
         ### send message
 	transfers.send(obj_tx,msg)
-	        
-    transfers.close(obj_tx)
-    transfers.close(obj_rx)
-    return
+
 
 

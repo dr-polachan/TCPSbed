@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
 import transfers.rev1 as transfers
-import algorithms.checksum.basic
 import codec.generic
-import algorithms.test.ping as ping
 import time
    
 def forward_flow_kinematic():     
@@ -22,7 +20,6 @@ def forward_flow_kinematic():
         
         ### receive message
 	msg = transfers.receive(obj_rx)
-        ping.echo_back_rev2(msg,"tpf_ss_com_entry",address_rx)        
 
 	### decode message
 	msg_list = codec.generic.decode(msg) 
@@ -32,9 +29,3 @@ def forward_flow_kinematic():
         
 	### send to tactile slave
 	transfers.send(obj_tx,msg)
-        ping.echo_back_rev2(msg,"tpf_ss_com_exit",address_rx)
-    
-    transfers.close(obj_tx)
-    transfers.close(obj_rx)
-
-    return
