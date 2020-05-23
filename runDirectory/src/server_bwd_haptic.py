@@ -1,7 +1,6 @@
 import transfers.rev1 as transfers
 import codec.generic
 
-### forward flow engine
 def backward_flow_haptic():  
     ### defining in/out address/mode
     address_rx = server_bwd_flow_haptic_entry_addr
@@ -24,7 +23,7 @@ def backward_flow_haptic():
         msg_list = codec.generic.decode(msg) # msg_list = [force-sensor-1-data, force-sensor-2-data]
                 
         ### encode the message
-        msg = codec.generic.codev2(msg,msg_list)
+        msg = codec.generic.code(msg_list)
         
         ### send the message
         transfers.send(obj_tx,msg)

@@ -1,25 +1,25 @@
 from __future__ import division
-from algorithms.kinematics.sub_mouse_controller import controller as controller
+from algorithms.kinematics.lib_mouse_controller.sub_mouse_controller import controller as controller
 
 def revGeneric (msg_list): 
     msg_list = map(int, msg_list)
     (x,y,temp,btn_left,btn_right,scroll) = msg_list
     
-    msg_list = (x,y,scroll,(btn_left,btn_right)) #re-arranging arguments
-    (x,y,z,scroll) = controller(msg_list) #returns calibrated [x_out,y_out,z_out,scroll_out]
+    msg_list = (x,y,scroll,(btn_left,btn_right)) 
+    (x,y,z,scroll) = controller(msg_list) 
     
-    # scaling
+    ### scaling
     x = x/10
     y = y/10
     z = z/10
 
-    # rearranging for robot
+    ### rearranging axis for robot
     robo_x = y
-    robo_y = -1*x #check phantom-x i-k implementation
+    robo_y = -1*x 
     robo_z = z
     robo_pincher = scroll*4
     
-    # bounddary conditions
+    ### boundary conditions
     if(robo_z < -8):
 	robo_z = -8
     if (robo_x < 5):
@@ -29,12 +29,12 @@ def revGeneric (msg_list):
     if(robo_pincher < 0):
 	robo_pincher = 0
 
-    # initial condition
+    ### initial condition
     robo_x = robo_x
     robo_y = robo_y
     robo_z = robo_z
 
-    ret_list = (robo_x,robo_y,robo_z,0,robo_pincher) #robot-x = y, robot-y = x, robot-pitch=0, robot-pincher=scroll
+    ret_list = (robo_x,robo_y,robo_z,0,robo_pincher)
     
     return (ret_list) 
 

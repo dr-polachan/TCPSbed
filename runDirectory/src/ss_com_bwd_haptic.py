@@ -1,6 +1,5 @@
 import transfers.rev1 as transfers
 
-### forward flow engine
 def backward_flow_haptic():   
     ### defining in/out address/mode
     address_rx = ss_com_bwd_flow_haptic_entry_addr

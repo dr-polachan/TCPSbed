@@ -24,12 +24,8 @@ def forward_flow_kinematic():
 	msg_list = codec.generic.decode(msg) 
                 	
         ### code message        
-        msg = codec.generic.codev2(msg,msg_list)
+        msg = codec.generic.code(msg_list)
 
         ### send to tactile slave
 	transfers.send(obj_tx,msg); 					
     
-    transfers.close(obj_tx)
-    transfers.close(obj_rx)
-
-    return

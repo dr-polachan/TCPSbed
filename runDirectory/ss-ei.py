@@ -7,8 +7,7 @@ execfile("./src/ss_ei_fwd_kinematic.py")
 
 if __name__ == '__main__':
 
-    	f1 = multiprocessing.Process(target=forward_flow_kinematic)
-    	
+    	f1 = multiprocessing.Process(target=forward_flow_kinematic) 	
 	if(en_kinematic_link):	
 		f1.start()    
 

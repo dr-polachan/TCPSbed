@@ -1,5 +1,4 @@
 #!/bin/bash
-
 xterm -title "ss-ei" -hold -e "sudo python ss-ei.py" &
 xterm -title "slave" -hold -e "sudo python ss-com.py" &
 xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &

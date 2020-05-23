@@ -10,7 +10,6 @@ def codev2(msg,msg_list):
     msg_list_str = map(str,msg_list)
     temp1 = " ".join(msg_list_str) 
     temp1 = "begin" + " " + temp1 + " " + "end"    
-    #print temp1
     result = re.sub(r'(begin(.+?)end)', temp1, msg) 
     return(result)
 

@@ -1,4 +1,3 @@
 #!/bin/bash
-
 xterm -title "server" -hold -e "sudo python server.py" 
 
