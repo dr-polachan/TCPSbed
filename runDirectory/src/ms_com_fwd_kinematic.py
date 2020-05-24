@@ -17,13 +17,13 @@ def forward_flow_kinematic():
         msg = transfers.receive(obj_rx)
 
         ### decode message
-	msg_list = codec.generic.decode(msg) 
-                	
+        msg_list = codec.generic.decode(msg) 
+            	
         ### code message        
         msg = codec.generic.code(msg_list)
 
         ### send to tactile slave
-	transfers.send(obj_tx_A,msg)
-    transfers.send(obj_tx_A,msg)                   
+        transfers.send(obj_tx_A,msg)
+        transfers.send(obj_tx_A,msg)                   
 				
     

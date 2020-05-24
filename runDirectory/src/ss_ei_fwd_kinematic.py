@@ -35,3 +35,20 @@ def forward_flow_kinematic():
 		### send message
 		transfers.send(obj_tx_kinematic,msg_kinematic)
  
+def bypass():     
+
+	### initialization
+	obj_rx_kinematic = transfers.init_rx(ss_ei_kin_entry_addr,"udp") 
+	obj_tx_kinematic = transfers.init_tx(ss_ei_kin_exit_addr, "udp") 
+
+
+	while (1):
+
+		print "live_ss-ei",time.time()
+
+		### receive message
+		msg_kinematic = transfers.receive(obj_rx_kinematic)
+
+		### send message
+		transfers.send(obj_tx_kinematic,msg_kinematic)
+ 

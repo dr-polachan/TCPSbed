@@ -11,17 +11,17 @@ def backward_flow_haptic():
        
         print "live_mscom_bwd_haptic",time.time()
         ### receive message
-	msg = transfers.receive(obj_rx)
-        
+        msg = transfers.receive(obj_rx)
+
         ### decode the message
         msg_list = codec.generic.decode(msg)
-	print "force feedback", msg_list
+        print "force feedback", msg_list
                    
-	### code message        
-	msg = codec.generic.code(msg_list)
-        
+        ### code message        
+        msg = codec.generic.code(msg_list)
+
         ### send message
-	transfers.send(obj_tx,msg)
+        transfers.send(obj_tx,msg)
 
 
 

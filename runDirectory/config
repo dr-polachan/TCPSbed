@@ -20,6 +20,8 @@ ss_embsys_app_ip=PC_3
 ## enable or disable flows (0: disable, 1:enable)
 en_kinematic_link=1
 en_haptic_link=1
+en_ms_ei = 0
+en_ss_ei = 1
 
 ## set link udp ports
 portStart = 6000
@@ -91,7 +93,7 @@ ss_com_hap_exit_mode = "udp"
 
 ## vrep configuration 
 vrep_path="/home/kpol/Documents/V-REP_PRO_EDU_V3_6_0_Ubuntu18_04/vrep.sh" 
-vrep_scene = "scenePhantomXGeneric.ttt"	
+vrep_scene = "scene_phantomx.ttt"	
  
 ### END 
  

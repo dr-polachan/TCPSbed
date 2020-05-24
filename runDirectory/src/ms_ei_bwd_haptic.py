@@ -34,4 +34,21 @@ def backward_flow_haptic():
 
 		### send message
 		transfers.send(obj_tx_haptic,msg_haptic)
+
+def bypass():     
+
+	### initialization
+	obj_rx_haptic = transfers.init_rx(ms_ei_hap_entry_addr,"udp") 
+	obj_tx_haptic = transfers.init_tx(ms_ei_hap_exit_addr, "udp") 
+	
+	
+	while (1):
+
+		print "live_ss-ei",time.time()
+
+		### receive message
+		msg_haptic = transfers.receive(obj_rx_haptic)
+
+		### send message
+		transfers.send(obj_tx_haptic,msg_haptic)
  
