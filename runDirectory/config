@@ -50,11 +50,11 @@ ms_com_hap_exit_mode = "udp"
 
 ## settings for ms_ei
 ms_ei_kin_entry_addr = (ms_ei_ip,kin_link_1_B)
-ms_ei_kin_entry_mode = "udp-timeout"
+ms_ei_kin_entry_mode = "udp-non-blocking"
 
 ms_ei_hap_entry_addr = (ms_ei_ip,hap_link_2)
 ms_ei_hap_exit_addr = (ms_com_ip,hap_link_3) 
-ms_ei_hap_entry_mode = "udp-timeout" 
+ms_ei_hap_entry_mode = "udp-non-blocking" 
 ms_ei_hap_exit_mode =  "udp"
  
 ## settings for srv 
@@ -71,11 +71,11 @@ srv_hap_exit_mode = "udp"
 ## settings for ss_ei
 ss_ei_kin_entry_addr = (ss_ei_ip,kin_link_2)
 ss_ei_kin_exit_addr = (ss_com_ip,kin_link_3) 
-ss_ei_kin_entry_mode = "udp-timeout" 
+ss_ei_kin_entry_mode = "udp-non-blocking" 
 ss_ei_kin_exit_mode =  "udp"
 
 ss_ei_hap_entry_addr = (ss_ei_ip,hap_link_1_B)
-ss_ei_hap_entry_mode = "udp-timeout-2"
+ss_ei_hap_entry_mode = "udp-non-blocking"
  
 ## settings for ss_com 
 ss_com_kin_entry_addr = (ss_com_ip,kin_link_3)

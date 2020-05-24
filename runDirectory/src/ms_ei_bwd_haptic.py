@@ -1,6 +1,6 @@
 import transfers.rev1 as transfers
 import codec.generic as codec
-import algorithms.prediction.linear as edge
+import algorithms.prediction.ms_ei as edge
 import time
 
 def backward_flow_haptic():     
@@ -14,6 +14,9 @@ def backward_flow_haptic():
 	while (1):
 
 		print "live_ss-ei",time.time()
+
+		### sampling time
+		time.sleep(10e-3)
 
 		### receive message
 		msg_haptic = transfers.receive(obj_rx_haptic)

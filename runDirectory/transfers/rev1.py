@@ -19,7 +19,7 @@ def init_rx(address_rx,mode_rx):
         obj.bind(address_rx)
         ret = (obj,address_rx,mode_rx)
 
-    if(mode_rx == "udp-timeout-2"):
+    if(mode_rx == "udp-non-blocking"):
 	obj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)   
 	obj.setblocking(0)
         obj.bind(address_rx)
@@ -47,10 +47,10 @@ def receive(obj_rx):
     address_rx = obj_rx[1]
     mode_rx = obj_rx[2]
 
-    if((mode_rx == "udp") or (mode_rx == "udp-non-blocking")):
+    if(mode_rx == "udp"):
 	data, addr = obj.recvfrom(60000) 
         
-    if((mode_rx == "udp-timeout") or (mode_rx == "udp-timeout-2")):
+    if((mode_rx == "udp-timeout") or (mode_rx == "udp-non-blocking")):
 	try:
 		data, addr = obj.recvfrom(60000) 
 	except:
