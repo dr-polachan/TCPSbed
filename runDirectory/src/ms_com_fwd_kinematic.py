@@ -6,7 +6,8 @@ import codec.generic
 def forward_flow_kinematic():     
 
     ### initialization
-    obj_tx = transfers.init_tx(ms_com_kin_exit_addr,ms_com_kin_exit_mode)
+    obj_tx_A = transfers.init_tx(ms_com_kin_exit_addr_A,ms_com_kin_exit_mode)
+    obj_tx_B = transfers.init_tx(ms_com_kin_exit_addr_B,ms_com_kin_exit_mode)
     obj_rx = transfers.init_rx(ms_com_kin_entry_addr,ms_com_kin_entry_mode)
     
     while (1):
@@ -22,5 +23,7 @@ def forward_flow_kinematic():
         msg = codec.generic.code(msg_list)
 
         ### send to tactile slave
-	transfers.send(obj_tx,msg); 					
+	transfers.send(obj_tx_A,msg)
+    transfers.send(obj_tx_A,msg)                   
+				
     

@@ -11,6 +11,7 @@ PC_3 = "10.0.0.3"
 ## testbed modules & testbed computer association
 ms_embsys_app_ip=PC_1
 ms_com_ip=PC_1
+ms_ei_ip = PC_1
 srv_ip=PC_2
 ss_ei_ip = PC_3
 ss_com_ip=PC_3
@@ -23,7 +24,8 @@ en_haptic_link=1
 ## set link udp ports
 portStart = 6000
 kin_link_0=portStart
-kin_link_1=portStart+1
+kin_link_1_A=portStart+1
+kin_link_1_B=portStart+21
 kin_link_2=portStart+2
 kin_link_3=portStart+3
 kin_link_4=portStart+4
@@ -32,26 +34,37 @@ hap_link_1_A=portStart+6
 hap_link_1_B=portStart+7
 hap_link_2=portStart+8
 hap_link_3=portStart+9
+hap_link_4=portStart+10
 
 ## settings for ms_com 
 ms_com_kin_entry_addr =(ms_com_ip, kin_link_0) 
-ms_com_kin_exit_addr = (srv_ip,kin_link_1) 
+ms_com_kin_exit_addr_A = (srv_ip,kin_link_1_A) 
+ms_com_kin_exit_addr_B = (ms_ei_ip,kin_link_1_B) 
 ms_com_kin_entry_mode ="udp" 
 ms_com_kin_exit_mode = "udp" 
  
-ms_com_hap_entry_addr = (ms_com_ip,hap_link_2) 
-ms_com_hap_exit_addr = (ms_embsys_app_ip,hap_link_3)
+ms_com_hap_entry_addr = (ms_com_ip,hap_link_3) 
+ms_com_hap_exit_addr = (ms_embsys_app_ip,hap_link_4)
 ms_com_hap_entry_mode = "udp"
 ms_com_hap_exit_mode = "udp"  
+
+## settings for ms_ei
+ms_ei_kin_entry_addr = (ms_ei_ip,kin_link_1_B)
+ms_ei_kin_entry_mode = "udp-timeout"
+
+ms_ei_hap_entry_addr = (ms_ei_ip,hap_link_2)
+ms_ei_hap_exit_addr = (ms_com_ip,hap_link_3) 
+ms_ei_hap_entry_mode = "udp-timeout" 
+ms_ei_hap_exit_mode =  "udp"
  
 ## settings for srv 
-srv_kin_entry_addr = (srv_ip,kin_link_1)
+srv_kin_entry_addr = (srv_ip,kin_link_1_A)
 srv_kin_exit_addr = (ss_ei_ip,kin_link_2) 
 srv_kin_entry_mode = "udp" 
 srv_kin_exit_mode = "udp"
  
 srv_hap_entry_addr = (srv_ip,hap_link_1_A) 
-srv_hap_exit_addr = (ms_com_ip,hap_link_2) 
+srv_hap_exit_addr = (ms_ei_ip,hap_link_2) 
 srv_hap_entry_mode = "udp"
 srv_hap_exit_mode = "udp" 
 

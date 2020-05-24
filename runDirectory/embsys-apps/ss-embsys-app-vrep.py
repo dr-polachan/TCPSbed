@@ -1,6 +1,7 @@
 import time
 import lib_vrep.vrep as vrep
 import os, sys
+import numpy as np
 lib_path = os.path.abspath(os.path.join(__file__,'..','..'))	
 sys.path.append(lib_path)
 import transfers.rev1 as transfers
@@ -44,6 +45,7 @@ def vrepControl():
         
    	### decode message
 	msg_list = codec.generic.decode(msg) 
+	print msg_list
 	
 	### moving actuators
 	msg_list = map(int, msg_list)
@@ -62,7 +64,7 @@ def vrepControl():
 	
 	### reading haptic data
 	[errorcode, dataForce] = vrep.simxGetJointForce(clientID,jointHandle_4,vrep.simx_opmode_streaming)
-	dataForce = -1*dataForce
+	dataForce = int(np.clip(-100*dataForce,0,100))
 	
 	### coding haptic data
 	msg_list = [dataForce]
@@ -70,10 +72,6 @@ def vrepControl():
 	        
         ### send the message
     	transfers.send(obj_tx,msg)
-
-
-
-    return
 
 if __name__ == '__main__':
     vrepControl()

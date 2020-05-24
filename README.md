@@ -1,4 +1,10 @@
+# Changes
+
+- Added support for slave side edge intelligence module
+- Added support for master side edge intelligence module
+
 # TCPSbed (v1.0) 
+
 A Modular Testbed for Tactile Internet based Cyber-Physical Systems
 
 ![architecture](https://user-images.githubusercontent.com/48801729/76053561-9bfb7280-5f93-11ea-9f3b-4a4e6dd20639.png)
