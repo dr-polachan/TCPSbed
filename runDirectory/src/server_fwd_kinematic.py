@@ -5,15 +5,10 @@ import algorithms.kinematics.mouse_controller
 
 
 def forward_flow_kinematic():     
-    ### defining in/out address/mode
-    address_rx = server_fwd_flow_kinematic_entry_addr
-    address_tx = server_fwd_flow_kinematic_exit_addr    
-    mode_rx = server_fwd_flow_kinematic_entry_mode
-    mode_tx = server_fwd_flow_kinematic_exit_mode
     
     ### initialization
-    obj_tx = transfers.init_tx(address_tx,mode_tx)
-    obj_rx = transfers.init_rx(address_rx,mode_rx)
+    obj_tx = transfers.init_tx(srv_kin_exit_addr,srv_kin_exit_mode)
+    obj_rx = transfers.init_rx(srv_kin_entry_addr,srv_kin_entry_mode)
     
     while (1):
 

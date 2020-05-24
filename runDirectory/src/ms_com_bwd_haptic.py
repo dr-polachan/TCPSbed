@@ -2,15 +2,10 @@ import codec.generic
 import transfers.rev1 as transfers
 
 def backward_flow_haptic():     
-    ### defining in/out address/mode
-    address_rx = ms_com_bwd_flow_haptic_entry_addr
-    address_tx = ms_com_bwd_flow_haptic_exit_addr    
-    mode_rx = ms_com_bwd_flow_haptic_entry_mode
-    mode_tx = ms_com_bwd_flow_haptic_exit_mode
-    
+
     ### initialization
-    obj_tx = transfers.init_tx(address_tx,mode_tx)
-    obj_rx = transfers.init_rx(address_rx,mode_rx)
+    obj_tx = transfers.init_tx(ms_com_hap_exit_addr,ms_com_hap_exit_mode)
+    obj_rx = transfers.init_rx(ms_com_hap_entry_addr,ms_com_hap_entry_mode)
     
     while (1):
        

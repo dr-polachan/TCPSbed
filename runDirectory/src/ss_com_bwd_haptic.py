@@ -1,16 +1,11 @@
 import transfers.rev1 as transfers
 
 def backward_flow_haptic():   
-    ### defining in/out address/mode
-    address_rx = ss_com_bwd_flow_haptic_entry_addr
-    address_tx = ss_com_bwd_flow_haptic_exit_addr_A    
-    mode_rx = ss_com_bwd_flow_haptic_entry_mode
-    mode_tx = ss_com_bwd_flow_haptic_exit_mode
-    
+
     ### initialization
-    obj_tx_A = transfers.init_tx(address_tx,mode_tx)
-    obj_tx_B = transfers.init_tx(ss_com_bwd_flow_haptic_exit_addr_B,mode_tx)
-    obj_rx = transfers.init_rx(address_rx,mode_rx)
+    obj_tx_A = transfers.init_tx(ss_com_hap_exit_addr_A,ss_com_hap_exit_mode)
+    obj_tx_B = transfers.init_tx(ss_com_hap_exit_addr_B,ss_com_hap_exit_mode)
+    obj_rx = transfers.init_rx(ss_com_hap_entry_addr,ss_com_hap_entry_mode)
 
         
     while (1):

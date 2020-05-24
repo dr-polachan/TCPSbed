@@ -6,9 +6,9 @@ import time
 def forward_flow_kinematic():     
 
     ### initialization
-    obj_tx_kinematic = transfers.init_tx(kin_exit_addr, kin_exit_mode) 
-    obj_rx_kinematic = transfers.init_rx(kin_entry_addr,kin_entry_mode) 
-    obj_rx_haptic = transfers.init_rx(hap_entry_addr,hap_entry_mode) 
+    obj_tx_kinematic = transfers.init_tx(ss_ei_kin_exit_addr, ss_ei_kin_exit_mode) 
+    obj_rx_kinematic = transfers.init_rx(ss_ei_kin_entry_addr,ss_ei_kin_entry_mode) 
+    obj_rx_haptic = transfers.init_rx(ss_ei_hap_entry_addr,ss_ei_hap_entry_mode) 
     obj_predict = edge.predict()
     
     while (1):

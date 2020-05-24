@@ -1,7 +1,7 @@
 ### Testbed Configuration
 
-## forward flow: ms_embsys->ms_com->server->ss_com->ss_embsys
-## backward flow: ms_embsys<-ms_com<-server<-ss_com<-ss_embsys
+## forward flow: ms_embsys->ms_com->server->ss_ei->ss_com->ss_embsys
+## backward flow: ms_embsys<-ms_com<-ms_ei<-server<-ss_com<-ss_embsys
 
 ## testbed pc settings
 PC_1 = "10.0.0.1"
@@ -19,8 +19,6 @@ ss_embsys_app_ip=PC_3
 ## enable or disable flows (0: disable, 1:enable)
 en_kinematic_link=1
 en_haptic_link=1
-en_audio_link=0
-en_video_link=0
 
 ## set link udp ports
 portStart = 6000
@@ -34,91 +32,51 @@ hap_link_1_A=portStart+6
 hap_link_1_B=portStart+7
 hap_link_2=portStart+8
 hap_link_3=portStart+9
-audio_link_0=portStart+10
-audio_link_1=portStart+11
-audio_link_2=portStart+12
-audio_link_3=portStart+13
-video_link_0=portStart+14
-video_link_1=portStart+15 
-video_link_2=portStart+16
-video_link_3=portStart+17
 
 ## settings for ms_com 
-ms_com_fwd_flow_kinematic_entry_addr =(ms_com_ip, kin_link_0) 
-ms_com_fwd_flow_kinematic_exit_addr = (srv_ip,kin_link_1) 
-ms_com_fwd_flow_kinematic_entry_mode ="udp" 
-ms_com_fwd_flow_kinematic_exit_mode = "udp" 
+ms_com_kin_entry_addr =(ms_com_ip, kin_link_0) 
+ms_com_kin_exit_addr = (srv_ip,kin_link_1) 
+ms_com_kin_entry_mode ="udp" 
+ms_com_kin_exit_mode = "udp" 
  
-ms_com_bwd_flow_haptic_entry_addr = (ms_com_ip,hap_link_2) 
-ms_com_bwd_flow_haptic_exit_addr = (ms_embsys_app_ip,hap_link_3)
-ms_com_bwd_flow_haptic_entry_mode = "udp"
-ms_com_bwd_flow_haptic_exit_mode = "udp"  
- 
-ms_com_bwd_flow_video_entry_addr = (ms_com_ip,video_link_2)
-ms_com_bwd_flow_video_exit_addr = (ms_embsys_app_ip, video_link_3) 
-ms_com_bwd_flow_video_entry_mode = "udp" 
-ms_com_bwd_flow_video_exit_mode ="udp" 
- 
-ms_com_bwd_flow_audio_entry_addr = (ms_com_ip,audio_link_2) 
-ms_com_bwd_flow_audio_exit_addr =(ms_embsys_app_ip, audio_link_3)
-ms_com_bwd_flow_audio_entry_mode = "udp"
-ms_com_bwd_flow_audio_exit_mode ="udp"
+ms_com_hap_entry_addr = (ms_com_ip,hap_link_2) 
+ms_com_hap_exit_addr = (ms_embsys_app_ip,hap_link_3)
+ms_com_hap_entry_mode = "udp"
+ms_com_hap_exit_mode = "udp"  
  
 ## settings for srv 
-server_fwd_flow_kinematic_entry_addr = (srv_ip,kin_link_1)
-server_fwd_flow_kinematic_exit_addr = (ss_ei_ip,kin_link_2) 
-server_fwd_flow_kinematic_entry_mode = "udp" 
-server_fwd_flow_kinematic_exit_mode = "udp"
+srv_kin_entry_addr = (srv_ip,kin_link_1)
+srv_kin_exit_addr = (ss_ei_ip,kin_link_2) 
+srv_kin_entry_mode = "udp" 
+srv_kin_exit_mode = "udp"
  
-server_bwd_flow_haptic_entry_addr = (srv_ip,hap_link_1_A) 
-server_bwd_flow_haptic_exit_addr = (ms_com_ip,hap_link_2) 
-server_bwd_flow_haptic_entry_mode = "udp"
-server_bwd_flow_haptic_exit_mode = "udp" 
- 
-server_bwd_flow_video_entry_addr = (srv_ip,video_link_1) 
-server_bwd_flow_video_exit_addr = (ms_com_ip,video_link_2) 
-server_bwd_flow_video_entry_mode = "udp"
-server_bwd_flow_video_exit_mode = "udp"
- 
-server_bwd_flow_audio_entry_addr = (srv_ip,audio_link_1) 
-server_bwd_flow_audio_exit_addr = (ms_com_ip,audio_link_2) 
-server_bwd_flow_audio_entry_mode = "udp"
-server_bwd_flow_audio_exit_mode = "udp" 
-
+srv_hap_entry_addr = (srv_ip,hap_link_1_A) 
+srv_hap_exit_addr = (ms_com_ip,hap_link_2) 
+srv_hap_entry_mode = "udp"
+srv_hap_exit_mode = "udp" 
 
 ## settings for ss_ei
-kin_entry_addr = (ss_ei_ip,kin_link_2)
-kin_exit_addr = (ss_com_ip,kin_link_3) 
-kin_entry_mode = "udp-timeout" 
-kin_exit_mode =  "udp"
+ss_ei_kin_entry_addr = (ss_ei_ip,kin_link_2)
+ss_ei_kin_exit_addr = (ss_com_ip,kin_link_3) 
+ss_ei_kin_entry_mode = "udp-timeout" 
+ss_ei_kin_exit_mode =  "udp"
 
-hap_entry_addr = (ss_ei_ip,hap_link_1_B)
-hap_entry_mode = "udp-timeout"
+ss_ei_hap_entry_addr = (ss_ei_ip,hap_link_1_B)
+ss_ei_hap_entry_mode = "udp-timeout"
  
 ## settings for ss_com 
-ss_com_fwd_flow_kinematic_entry_addr = (ss_com_ip,kin_link_3)
-ss_com_fwd_flow_kinematic_exit_addr = (ss_embsys_app_ip,kin_link_4)
-ss_com_fwd_flow_kinematic_entry_mode = "udp" 
-ss_com_fwd_flow_kinematic_exit_mode = "udp"
+ss_com_kin_entry_addr = (ss_com_ip,kin_link_3)
+ss_com_kin_exit_addr = (ss_embsys_app_ip,kin_link_4)
+ss_com_kin_entry_mode = "udp" 
+ss_com_kin_exit_mode = "udp"
  
-ss_com_bwd_flow_haptic_entry_addr = (ss_com_ip,hap_link_0)
-ss_com_bwd_flow_haptic_exit_addr_A = (srv_ip,hap_link_1_A)
-ss_com_bwd_flow_haptic_exit_addr_B = (ss_ei_ip,hap_link_1_B)
-ss_com_bwd_flow_haptic_entry_mode = "udp"
-ss_com_bwd_flow_haptic_exit_mode = "udp"
- 
-ss_com_bwd_flow_video_entry_addr = (ss_com_ip, video_link_0)
-ss_com_bwd_flow_video_exit_addr = (srv_ip,video_link_1) 
-ss_com_bwd_flow_video_entry_mode ="udp"
-ss_com_bwd_flow_video_exit_mode = "udp" 
- 
-ss_com_bwd_flow_audio_entry_addr = (ss_com_ip, audio_link_0)
-ss_com_bwd_flow_audio_exit_addr = (srv_ip,audio_link_1) 
-ss_com_bwd_flow_audio_entry_mode = "udp"
-ss_com_bwd_flow_audio_exit_mode = "udp" 
+ss_com_hap_entry_addr = (ss_com_ip,hap_link_0)
+ss_com_hap_exit_addr_A = (srv_ip,hap_link_1_A)
+ss_com_hap_exit_addr_B = (ss_ei_ip,hap_link_1_B)
+ss_com_hap_entry_mode = "udp"
+ss_com_hap_exit_mode = "udp"
 
-
-## VREP Configuration 
+## vrep configuration 
 vrep_path="/home/kpol/Documents/V-REP_PRO_EDU_V3_6_0_Ubuntu18_04/vrep.sh" 
 vrep_scene = "scenePhantomXGeneric.ttt"	
  
