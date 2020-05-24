@@ -14,7 +14,6 @@ def backward_flow_haptic():
         ### receive message
         msg = transfers.receive(obj_rx)
         print msg
-        
         ### decode the messasge       
         msg_list = codec.generic.decode(msg) # msg_list = [force-sensor-1-data, force-sensor-2-data]
                 

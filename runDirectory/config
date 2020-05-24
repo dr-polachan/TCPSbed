@@ -75,7 +75,7 @@ ss_ei_kin_entry_mode = "udp-timeout"
 ss_ei_kin_exit_mode =  "udp"
 
 ss_ei_hap_entry_addr = (ss_ei_ip,hap_link_1_B)
-ss_ei_hap_entry_mode = "udp-timeout"
+ss_ei_hap_entry_mode = "udp-timeout-2"
  
 ## settings for ss_com 
 ss_com_kin_entry_addr = (ss_com_ip,kin_link_3)
