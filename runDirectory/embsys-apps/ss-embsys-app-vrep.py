@@ -45,10 +45,12 @@ def vrepControl():
         
    	### decode message
 	msg_list = codec.generic.decode(msg) 
-	print msg_list
 	
 	### moving actuators
-	msg_list = map(int, msg_list)
+	try:
+		msg_list = map(int, msg_list)
+	except:
+		continue
 
 	jointAngle1 = msg_list[0]
 	jointAngle2 = msg_list[1]

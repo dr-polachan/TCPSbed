@@ -20,7 +20,7 @@ def forward_flow_kinematic():
         ### decode message
         msg_list = codec.generic.decode(msg) #msg_list:(x,y,z, pitch, pincher)
 
-        ### run kinematics algorithm (here)
+        ### run kinematics algorithm
         msg_list = algorithms.kinematics.mouse_controller.revGeneric(msg_list) # msg-list: (x,y,z,pitch=0,pincher)
 
         ### run inverse kinematics algorithm                     

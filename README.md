@@ -1,6 +1,11 @@
 # Issues
 - System hangs for a second or so during run-time. Need to check if the problem is with the virtual machine
-
+- Need to remove the below workaround from embsys-app vrep
+    try:
+		msg_list = map(int, msg_list)
+	except:
+		continue 
+		
 # Changes
 
 - Mininet coee exp-ei now runs ss-ei modules in seperate hosts

@@ -1,9 +1,11 @@
 import re
 
 def code (my_list):
+
     my_list_str = map(str,my_list)
     msg = " ".join(my_list_str) 
     msg = "begin" + " " + msg + " " + "end"    
+    
     return (msg)
     
 def codev2(msg,msg_list):
