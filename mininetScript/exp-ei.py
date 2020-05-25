@@ -16,23 +16,6 @@ import datetime
 
 execfile("./settings")
 
-def mySimulateExternalTraffic(net):
-
-    info( '*** Traffic Simulation ... \n' )
-
-    varPort = 5001
-    varBandwidth = trafficBandwidth 
-    varTime = "250000"
-
-    arrHosts = ['h0', 'h1', 'h2', 'h5', 'h6', 'h8']
-
-    for i in range(len(arrHosts)):
-        for j in range(len(arrHosts)):
-            if(arrHosts[i]!=arrHosts[j]):
-                net.get(arrHosts[i]).cmd("iperf -s -u -p ",str(varPort)," &")
-                net.get(arrHosts[j]).cmd("iperf -c ",net.get(arrHosts[i]).IP()," -u -b ",str(varBandwidth)," -t ",str(varTime)," -p ",str(varPort)," &")
-                varPort  = varPort + 1
-
 def myNetwork():
 
     info( '********* Project 1Task 1  **********************\n' )
@@ -58,6 +41,8 @@ def myNetwork():
     info( '*** Add links between hosts and switches\n')
     linkConfig_HToS = {'delay':'0', 'bw' : 100}
     linkConfig_SToS = {'delay':'0', 'bw' : 100}
+    linkConfig_lastmile = {'delay':'0', 'bw' : 100, 'loss' : 0 }
+
 
 
     l0=net.addLink(hTEM, s0,cls=TCLink , **linkConfig_HToS)
@@ -65,7 +50,7 @@ def myNetwork():
     l2=net.addLink(hServer, s1,cls=TCLink , **linkConfig_HToS)
     l3=net.addLink(s1, s2,cls=TCLink , **linkConfig_SToS)
     l4=net.addLink(hSSEI, s2,cls=TCLink , **linkConfig_HToS)
-    l5=net.addLink(s2, s3,cls=TCLink , **linkConfig_SToS)
+    l5=net.addLink(s2, s3,cls=TCLink , **linkConfig_lastmile)
     l6=net.addLink(hTES, s3,cls=TCLink , **linkConfig_HToS)
    
 
@@ -82,7 +67,7 @@ def myNetwork():
 
     net.start()
 
-    net.pingAll()
+    #net.pingAll()
 
     return(net)
 
@@ -104,7 +89,7 @@ if __name__ == '__main__':
     setLogLevel( 'info' )
 
     # clean the results folder
-    os.system("sudo rm ../runDirectory/results/qosAnalysis/*")
+    os.system("sudo rm ../runDirectory/results/edge-experiments/*")
 
     # Simulate Network Topology
     net = myNetwork()

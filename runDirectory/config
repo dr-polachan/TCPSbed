@@ -23,7 +23,7 @@ ss_embsys_app_ip = PC_4
 en_kinematic_link=1
 en_haptic_link=1
 en_ms_ei = 0
-en_ss_ei = 0
+en_ss_ei = 1
 
 ## set link udp ports
 portStart = 6000

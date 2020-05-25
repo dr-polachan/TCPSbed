@@ -16,7 +16,7 @@ def forward_flow_kinematic():
 		print "live_ss-ei",time.time()
 
 		### sampling time
-		time.sleep(1e-3)
+		time.sleep(10e-3)
 
 		### receive message
 		msg_kinematic = transfers.receive(obj_rx_kinematic)

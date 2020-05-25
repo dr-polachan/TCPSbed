@@ -25,7 +25,7 @@ if __name__ == '__main__':
         print "kin-sims",time.time()
 
         ### sampling time
-        time.sleep(50e-3)
+        time.sleep(100e-3)
 
         ### generating kinematic sample
         amp = 30

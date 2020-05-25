@@ -11,6 +11,7 @@ df = pd.read_csv(data_file)
 df["time"]= df["time"]-df["time"][0]
 
 print df.head()
+print df.tail()
 
 df.plot(x='time',y='data')
 

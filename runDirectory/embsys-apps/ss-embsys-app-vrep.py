@@ -74,7 +74,7 @@ def vrepControl():
 		string = str('{0:6f}'.format(time.time()))+","+str(gripperPosition)+"\n"
 		obj_file.write(string) #time,gripper-position
 
-		if(count > 10000):
+		if(count > 250):
 			print "closing applciation"
 			obj_file.close()
 			break
