@@ -1,19 +1,5 @@
-# Issues
-- System hangs for a second or so during run-time. Need to check if the problem is with the virtual machine
-- Need to remove the below workaround from embsys-app vrep
-    try:
-		msg_list = map(int, msg_list)
-	except:
-		continue 
-		
-# Changes
-
-- Mininet coee exp-ei now runs ss-ei modules in seperate hosts
-- Config file is updated to run ss-ei on seperate hosts
-- Mininet code (temp.py) is renamed to exp-ei 
-- You can now enable/disable edge intelligence modules
-- Added support for slave side edge intelligence module
-- Added support for master side edge intelligence module
+# Branch
+exp-edge-1 (copied from branch temp-edge)
 
 # TCPSbed (v1.0) 
 
