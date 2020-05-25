@@ -64,6 +64,8 @@ def vrepControl():
 	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_4, jointAngle4*3.14/180, vrep.simx_opmode_streaming)
 	errorcode = vrep.simxSetIntegerSignal(clientID,'PhantomXPincher_gripperClose',gripperPosition,vrep.simx_opmode_oneshot)
 	
+	### store and save gripper position
+
 	### reading haptic data
 	[errorcode, dataForce] = vrep.simxGetJointForce(clientID,jointHandle_4,vrep.simx_opmode_streaming)
 	dataForce = int(np.clip(-100*dataForce,0,100))
