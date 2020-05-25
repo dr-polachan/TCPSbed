@@ -24,58 +24,71 @@ errorcode, jointHandle_2 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_jo
 errorcode, jointHandle_3 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint3',vrep.simx_opmode_blocking)
 errorcode, jointHandle_4 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint4',vrep.simx_opmode_blocking)
 
+### initialization
+obj_file = open('./results/edge-experiments/data.txt', 'w')
+string = "time"+","+"data"+"\n"
+obj_file.write(string) 
+
 def vrepControl(): 
 
-    ### defining in/out address/mode
-    address_rx = (ss_embsys_app_ip, kin_link_4)
-    address_tx = (ss_com_ip, hap_link_0)    
-    mode_rx = "udp"
-    mode_tx = "udp"
-    
-    ### initialization    
-    obj_rx = transfers.init_rx(address_rx,mode_rx)	
-    obj_tx = transfers.init_tx(address_tx,mode_tx)
+	### defining in/out address/mode
+	address_rx = (ss_embsys_app_ip, kin_link_4)
+	address_tx = (ss_com_ip, hap_link_0)    
+	mode_rx = "udp"
+	mode_tx = "udp"
 
-    
-    while (1):
-        print "vrep-control",time.time()
-        
-        ### receive message
-        msg = transfers.receive(obj_rx) 
-        
-   	### decode message
-	msg_list = codec.generic.decode(msg) 
-	
-	### moving actuators
-	try:
-		msg_list = map(int, msg_list)
-	except:
-		continue
+	### initialization    
+	obj_rx = transfers.init_rx(address_rx,mode_rx)	
+	obj_tx = transfers.init_tx(address_tx,mode_tx)
 
-	jointAngle1 = msg_list[0]
-	jointAngle2 = msg_list[1]
-	jointAngle3 = msg_list[2]
-	jointAngle4 = msg_list[3]
-	gripperPosition = msg_list[4] #Full Close=0, Full Open = 100
+	count = 0
+	while (1):
+		count = count + 1
+		print "vrep-control",time.time()
 
-	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_1, jointAngle1*3.14/180, vrep.simx_opmode_streaming)
-	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_2, jointAngle2*3.14/180, vrep.simx_opmode_streaming)
-	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_3, jointAngle3*3.14/180, vrep.simx_opmode_streaming)
-	errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_4, jointAngle4*3.14/180, vrep.simx_opmode_streaming)
-	errorcode = vrep.simxSetIntegerSignal(clientID,'PhantomXPincher_gripperClose',gripperPosition,vrep.simx_opmode_oneshot)
-	
-	### store and save gripper position
+		### receive message
+		msg = transfers.receive(obj_rx) 
 
-	### reading haptic data
-	[errorcode, dataForce] = vrep.simxGetJointForce(clientID,jointHandle_4,vrep.simx_opmode_streaming)
-	dataForce = int(np.clip(-100*dataForce,0,100))
-	
-	### coding haptic data
-	msg_list = [dataForce]
-        msg = codec.generic.code(msg_list)
-	        
-        ### send the message
-    	transfers.send(obj_tx,msg)
+		### decode message
+		msg_list = codec.generic.decode(msg) 
+
+		### moving actuators
+		try:
+			msg_list = map(int, msg_list)
+		except:
+			continue
+
+		jointAngle1 = msg_list[0]
+		jointAngle2 = msg_list[1]
+		jointAngle3 = msg_list[2]
+		jointAngle4 = msg_list[3]
+		gripperPosition = msg_list[4] #Full Close=0, Full Open = 100
+
+		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_1, jointAngle1*3.14/180, vrep.simx_opmode_streaming)
+		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_2, jointAngle2*3.14/180, vrep.simx_opmode_streaming)
+		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_3, jointAngle3*3.14/180, vrep.simx_opmode_streaming)
+		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_4, jointAngle4*3.14/180, vrep.simx_opmode_streaming)
+		errorcode = vrep.simxSetIntegerSignal(clientID,'PhantomXPincher_gripperClose',gripperPosition,vrep.simx_opmode_oneshot)
+
+		### store and save gripper position
+		string = str('{0:6f}'.format(time.time()))+","+str(gripperPosition)+"\n"
+		obj_file.write(string) #time,gripper-position
+
+		if(count > 10000):
+			print "closing applciation"
+			obj_file.close()
+			break
+
+		### reading haptic data
+		[errorcode, dataForce] = vrep.simxGetJointForce(clientID,jointHandle_4,vrep.simx_opmode_streaming)
+		dataForce = int(np.clip(-100*dataForce,0,100))
+
+		### coding haptic data
+		msg_list = [dataForce]
+		msg = codec.generic.code(msg_list)
+
+		### send the message
+		transfers.send(obj_tx,msg)
 
 if __name__ == '__main__':
     vrepControl()
