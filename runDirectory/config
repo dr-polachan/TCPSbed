@@ -7,15 +7,17 @@
 PC_1 = "10.0.0.1"
 PC_2 = "10.0.0.2"
 PC_3 = "10.0.0.3"
+PC_4 = "10.0.0.4"
+
 
 ## testbed modules & testbed computer association
-ms_embsys_app_ip=PC_1
-ms_com_ip=PC_1
+ms_embsys_app_ip= PC_1
+ms_com_ip= PC_1
 ms_ei_ip = PC_1
-srv_ip=PC_2
+srv_ip= PC_2
 ss_ei_ip = PC_3
-ss_com_ip=PC_3
-ss_embsys_app_ip=PC_3
+ss_com_ip = PC_4
+ss_embsys_app_ip = PC_4
  
 ## enable or disable flows (0: disable, 1:enable)
 en_kinematic_link=1

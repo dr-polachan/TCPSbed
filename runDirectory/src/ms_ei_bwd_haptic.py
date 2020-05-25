@@ -13,7 +13,7 @@ def backward_flow_haptic():
 	
 	while (1):
 
-		print "live_ss-ei",time.time()
+		print "live_ms-ei",time.time()
 
 		### sampling time
 		time.sleep(10e-3)
@@ -44,7 +44,7 @@ def bypass():
 	
 	while (1):
 
-		print "live_ss-ei",time.time()
+		print "live_ms-ei (bypass-mode)",time.time()
 
 		### receive message
 		msg_haptic = transfers.receive(obj_rx_haptic)

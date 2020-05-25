@@ -1,0 +1,4 @@
+#!/bin/bash
+xterm -title "ss-ei" -hold -e "sudo python ss-ei.py"
+
+
