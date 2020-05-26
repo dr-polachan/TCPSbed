@@ -1,11 +1,11 @@
 #!/bin/bash
-#xterm -title "ss-com" -hold -e "sudo python ss-com.py" &
-#xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &
-#sleep 10
-#xterm -title "ss-embsys-app-vrep" -hold -e "sudo python embsys-apps/ss-embsys-app-vrep.py" 
-
-sudo python ss-com.py &
-sudo python v-rep/vrepLoader.py &
+xterm -title "ss-com" -hold -e "sudo python ss-com.py" &
+xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &
 sleep 10
-sudo python embsys-apps/ss-embsys-app-vrep.py & 
+xterm -title "ss-embsys-app-vrep" -hold -e "sudo python embsys-apps/ss-embsys-app-vrep.py" 
+
+#sudo python ss-com.py &
+#sudo python v-rep/vrepLoader.py &
+#sleep 10
+#sudo python embsys-apps/ss-embsys-app-vrep.py & 
 

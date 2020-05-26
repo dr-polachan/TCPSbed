@@ -54,7 +54,7 @@ def vrepControl():
 
 		### moving actuators
 		try:
-			msg_list = map(int, msg_list)
+			msg_list = map(float, msg_list)
 		except:
 			continue
 
@@ -62,7 +62,7 @@ def vrepControl():
 		jointAngle2 = msg_list[1]
 		jointAngle3 = msg_list[2]
 		jointAngle4 = msg_list[3]
-		gripperPosition = msg_list[4] #Full Close=0, Full Open = 100
+		gripperPosition = int(msg_list[4]) #Full Close=0, Full Open = 100
 
 		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_1, jointAngle1*3.14/180, vrep.simx_opmode_streaming)
 		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_2, jointAngle2*3.14/180, vrep.simx_opmode_streaming)
@@ -74,7 +74,7 @@ def vrepControl():
 		string = str('{0:6f}'.format(time.time()))+","+str(gripperPosition)+"\n"
 		obj_file.write(string) #time,gripper-position
 
-		if(count > 250):
+		if(count > 500):
 			print "closing applciation"
 			obj_file.close()
 			break

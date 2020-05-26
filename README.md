@@ -6,6 +6,8 @@ exp-edge-1 (copied from branch temp-edge)
 (2) You can analyze the result, by running Testbed/rundirectory/tools/edge-experiments/analyzer.py
 (3) You can enable/disable slave side edge intelligence and monitor (2). For enabling/disabling slave side edge intelligence edit config file.
 
+* this version works properly.
+
 # TCPSbed (v1.0) 
 
 A Modular Testbed for Tactile Internet based Cyber-Physical Systems

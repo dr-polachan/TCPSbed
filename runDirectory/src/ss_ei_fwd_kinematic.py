@@ -16,7 +16,7 @@ def forward_flow_kinematic():
 		print "live_ss-ei",time.time()
 
 		### sampling time
-		time.sleep(10e-3)
+		time.sleep(1e-3)
 
 		### receive message
 		msg_kinematic = transfers.receive(obj_rx_kinematic)
@@ -27,7 +27,7 @@ def forward_flow_kinematic():
 		msg_haptic_list = codec.decode(msg_haptic) 
 
 		### predict kinematic command
-		msg_kinematic_list = obj_predict.run(msg_kinematic_list, msg_haptic_list)
+		msg_kinematic_list = obj_predict.run(msg_kinematic_list,msg_haptic_list)
 
 		### encode message
 		msg_kinematic = codec.code(msg_kinematic_list)

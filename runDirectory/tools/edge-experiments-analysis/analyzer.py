@@ -13,8 +13,12 @@ df["time"]= df["time"]-df["time"][0]
 print df.head()
 print df.tail()
 
-df.plot(x='time',y='data')
+plt.step(df["time"], df["data"], where='post', linestyle='--', marker='o', markerfacecolor='red')
+plt.xlabel('time (in seconds)',fontsize=14)
+plt.ylabel('gripper-position (0-100)',fontsize=14)
+plt.tick_params(labelsize=14)
 
+plt.xlim(0,1)
 plt.show()
 
 print "DONE !!!"

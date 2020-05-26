@@ -39,9 +39,9 @@ def myNetwork():
 
     
     info( '*** Add links between hosts and switches\n')
-    linkConfig_HToS = {'delay':'0', 'bw' : 100}
-    linkConfig_SToS = {'delay':'0', 'bw' : 100}
-    linkConfig_lastmile = {'delay':'0', 'bw' : 100, 'loss' : 0 }
+    linkConfig_HToS = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
+    linkConfig_SToS = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
+    linkConfig_lastmile = {'delay':'0', 'bw' : 100, 'loss' : 50, 'use_htb':'True' }
 
 
 

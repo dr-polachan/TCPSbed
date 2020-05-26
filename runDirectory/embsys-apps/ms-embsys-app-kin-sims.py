@@ -23,6 +23,17 @@ if __name__ == '__main__':
 
     while(1):
         print "kin-sims",time.time()
+        msg_list = [16,0,12,0,int(50+30)] #(x,y,z,pitch,pincher)
+        msg = codec.generic.code(msg_list)
+        transfers.send(obj_tx,msg)
+        time.sleep(100e-3)
+        msg_list = [16,0,12,0,int(50-30)] #(x,y,z,pitch,pincher)
+        msg = codec.generic.code(msg_list)
+        transfers.send(obj_tx,msg)
+        time.sleep(100e-3)
+
+    while(1):
+        print "kin-sims",time.time()
 
         ### sampling time
         time.sleep(100e-3)
