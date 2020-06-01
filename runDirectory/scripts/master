@@ -3,6 +3,7 @@
 #xterm -title "ms-embsys-app-kin-sims" -hold -e "sudo python embsys-apps/ms-embsys-app-kin-sims.py" &
 #xterm -title "ms-com" -hold -e "sudo python ms-com.py" & 
 #xterm -title "ms-ei" -hold -e "sudo python ms-ei.py"
+
 sudo python embsys-apps/ms-embsys-app-kin-sims.py &
 sudo python ms-com.py &
 sudo python ms-ei.py &

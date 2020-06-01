@@ -23,31 +23,11 @@ if __name__ == '__main__':
 
     while(1):
         print "kin-sims",time.time()
-        msg_list = [16,0,12,0,int(50+30)] #(x,y,z,pitch,pincher)
+        msg_list = [16,0,12,0,int(100)] #(x,y,z,pitch,pincher)
         msg = codec.generic.code(msg_list)
         transfers.send(obj_tx,msg)
         time.sleep(100e-3)
-        msg_list = [16,0,12,0,int(50-30)] #(x,y,z,pitch,pincher)
+        msg_list = [16,0,12,0,int(0)] #(x,y,z,pitch,pincher)
         msg = codec.generic.code(msg_list)
         transfers.send(obj_tx,msg)
         time.sleep(100e-3)
-
-    while(1):
-        print "kin-sims",time.time()
-
-        ### sampling time
-        time.sleep(100e-3)
-
-        ### generating kinematic sample
-        amp = 30
-        freq = 1
-        time_now = time.time()-t_init
-        arg = 2*math.pi*freq*time_now
-        pincher = amp*np.sin(arg)
-        msg_list = [16,0,12,0,int(50+pincher)] #(x,y,z,pitch,pincher)
-        
-        ### encode message
-        msg = codec.generic.code(msg_list)
-
-        ### send message
-        transfers.send(obj_tx,msg)

@@ -24,6 +24,6 @@ def forward_flow_kinematic():
 
         ### send to tactile slave
         transfers.send(obj_tx_A,msg)
-        transfers.send(obj_tx_A,msg)                   
+        transfers.send(obj_tx_B,msg)                   
 				
     
