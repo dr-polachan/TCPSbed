@@ -70,14 +70,13 @@ def vrepControl():
 		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_4, jointAngle4*3.14/180, vrep.simx_opmode_streaming)
 		errorcode = vrep.simxSetIntegerSignal(clientID,'PhantomXPincher_gripperClose',gripperPosition,vrep.simx_opmode_oneshot)
 
-		[errorcode, gripperPosRead] = vrep.simxGetIntegerSignal(clientID,'PhantomXPincher_gripperClose',vrep.simx_opmode_streaming)
-		print gripperPosRead
+		[errorcode, gripperPosRead] = vrep.simxGetIntegerSignal(clientID,'PhantomXPincher_gripperClose',vrep.simx_opmode_oneshot)
 
 		### store and save gripper position
 		string = str('{0:6f}'.format(time.time()))+","+str(gripperPosRead)+"\n"
 		obj_file.write(string) #time,gripper-position
 
-		if(count > 10):
+		if(count > 25):
 			print "closing applciation"
 			obj_file.close()
 			break
