@@ -1,25 +1,7 @@
 # Branch
-exp-edge-1 (directory is initialized from branch temp-edge)
+exp-qos-plots (directory is initialized from branch exp-edge-1)
 
-For performing experiments to demonstrate the benefit of edge-intelligence.
-
-experiment-overview - from the master side, the gripper position of the remoteside robot is commanded to open and close every 100ms. The gripper position signal at the remoteside is logged in a file.
-
-experiments -
-(1) demonstrate open/close signal without any packet loss.
-(2) demonstrate open/close signal with 50% packet loss.
-(3) demonstrate open/close signal with 50% packet loss and ss_ei enabled.
-
-* to change the packet loss, edit the exp-ei file
-* to enable/disable edge intelligence (i.e., ss-ei) edit the config file
-
-* how to run
-(1) Go to folder, TCPSbed/mininet and run script exp-ei.py
-(2) You can analyze the result, by running TCPSbed/rundirectory/tools/edge-experiments/analyzer.py
-
-** results of experiments (1), (2) and (3) are in TCPSbed/rundirectory/results/backup
-
-** Ensure to restart the OS and System before running experiments.
+Objective - For performing experiments to demonstrate tails in QoS distributions in a best-effot packet switched network. 
 
 # TCPSbed (v1.0) 
 
