@@ -3,6 +3,8 @@ exp-qos-plots (directory is initialized from branch exp-edge-1)
 
 Objective - For performing experiments to demonstrate tails in QoS distributions in a best-effot packet switched network. 
 
+Status - basic structure done.
+
 # TCPSbed (v1.0) 
 
 A Modular Testbed for Tactile Internet based Cyber-Physical Systems
