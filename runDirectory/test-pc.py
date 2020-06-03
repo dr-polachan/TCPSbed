@@ -11,23 +11,22 @@ import sys
 
 ### settings
 execfile("./src/global_settings.py")
-test_pc_ip = ms_com_ip  #10.0.0.1
+test_pc_ip = ms_com_ip 
 test_pc_udp_port = 6008
 
-## ping count, interval
-const_ping_count = 200 # number of ping commands to send 
-const_interpkt_delay_ms = 10 #1000; #interpacket delay in milli seconds
+## echo count, interval
+const_ping_count = 200 # number of echo commands to send 
+const_interpkt_delay_ms = 10 # interpacket delay in milli seconds
 
-## ping test points
-list_tp = ['tpf_ms_com_entry', 'tpf_ms_com_exit']  #, 'tpf_srv_entry','tpf_srv_exit','tpf_ss_com_entry', 'tpf_ss_com_exit']
+## list of echo points
+list_tp = ['tpf_ms_com_entry', 'tpf_ms_com_exit']  
+
+## echo inject and receive address
+address_udp_send = (ms_com_ip,kin_link_0)
+address_udp_receive = (test_pc_ip, test_pc_udp_port) 
 
 
-## ping inject/receive address
-address_udp_send = (ms_com_ip,kin_link_0) # ip-address,port
-address_udp_receive = (test_pc_ip, test_pc_udp_port)   # ip-address,port of test_pc
-
-
-## defining the message
+## echo message to send
 messageToSendInit = "begin 16 0 12 0 100 end"
 messageToSendCommand = "begin 16 0 12 0 50 end"
 
