@@ -9,10 +9,8 @@ import scipy
 import scikits.bootstrap as bootstrap
 
 plt.close('all')
-#http://www.randalolson.com/2012/08/06/statistical-analysis-made-easy-in-python/
 
 ### user settings
-#list_tp = ["tpf_ms_com_entry","tpf_ms_com_exit"]
 execfile("settings")
 
 list_pp = list_tp
@@ -23,8 +21,8 @@ array_obj_data = np.zeros(len(list_pp), dtype=object)
 ### analyzis
 for i in range(len(list_pp)):
   ## reformat data_received/data_send.txt & save as dr/ds.txt
-  reformatfiles.reformatfiles("../../results/qosAnalysis/data_received.txt","./results/dr1.txt",list_pp[i])   
-  reformatfiles.reformatfiles("../../results/qosAnalysis/data_send.txt","./results/ds1.txt",list_pp[i]) 
+  reformatfiles.reformatfiles("../../results/qos-analysis/data_received.txt","./results/dr1.txt",list_pp[i])   
+  reformatfiles.reformatfiles("../../results/qos-analysis/data_send.txt","./results/ds1.txt",list_pp[i]) 
   ## analyzer the results
   (obj_stat,obj_data) = analyzer.analyze("./results/ds1.txt","./results/dr1.txt",list_pp[i])
   array_obj_stat[i]=obj_stat #statistics of send/received data

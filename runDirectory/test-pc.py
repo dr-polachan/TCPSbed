@@ -15,11 +15,11 @@ test_pc_ip = ms_com_ip  #10.0.0.1
 test_pc_udp_port = 6008
 
 ## ping count, interval
-const_ping_count = 2 # number of ping commands to send 
-const_interpkt_delay_ms = 100 #1000; #interpacket delay in milli seconds
+const_ping_count = 200 # number of ping commands to send 
+const_interpkt_delay_ms = 10 #1000; #interpacket delay in milli seconds
 
 ## ping test points
-list_tp = ['tpf_ms_com_entry'] #, 'tpf_ms_com_exit', 'tpf_srv_entry','tpf_srv_exit','tpf_ss_com_entry', 'tpf_ss_com_exit']
+list_tp = ['tpf_ms_com_entry', 'tpf_ms_com_exit']  #, 'tpf_srv_entry','tpf_srv_exit','tpf_ss_com_entry', 'tpf_ss_com_exit']
 
 
 ## ping inject/receive address
