@@ -10,6 +10,7 @@ PC_2 = "10.0.0.2"
 PC_3 = "10.0.0.3"
 PC_4 = "10.0.0.4"
 
+ping_link=5000
 
 ## testbed modules & testbed computer association
 ms_embsys_app_ip= PC_1

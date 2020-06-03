@@ -15,7 +15,7 @@ test_pc_ip = ms_com_ip  #10.0.0.1
 test_pc_udp_port = 6008
 
 ## ping count, interval
-const_ping_count = 1 # number of ping commands to send 
+const_ping_count = 2 # number of ping commands to send 
 const_interpkt_delay_ms = 100 #1000; #interpacket delay in milli seconds
 
 ## ping test points
