@@ -1,16 +1,4 @@
 #!/bin/bash
 #xterm -title "hTES" -hold -e "sudo tcpdump" &
-#xterm -title "hTES" -hold -e "sudo tshark -i hTES-eth0" &
-
-xterm -title "hRx1" -hold -e "sudo tshark -i hRx1-eth0" &
-
-
-#xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &
-#sleep 10
-#xterm -title "ss-embsys-app-vrep" -hold -e "sudo python embsys-apps/ss-embsys-app-vrep.py" 
-
-#sudo python ss-com.py &
-#sudo python v-rep/vrepLoader.py &
-#sleep 10
-#sudo python embsys-apps/ss-embsys-app-vrep.py & 
+#xterm -title "hRx1" -hold -e "sudo tshark -i hRx1-eth0" &
 

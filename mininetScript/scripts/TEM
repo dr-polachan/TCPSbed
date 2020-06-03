@@ -4,7 +4,7 @@
 #xterm -title "hTES" -hold -e "sudo wireshark -i hTES-eth0" &
 
 sleep 5.1
-xterm -title "hTEM" -hold -e "sudo ping 10.0.0.2 -c 10000 -i 10e-3" &
+xterm -title "hTEM" -hold -e "sudo ping 10.0.0.2 -c 1000 -i 10e-3" &
 
 
 #xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &
