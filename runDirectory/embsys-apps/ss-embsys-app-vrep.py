@@ -24,10 +24,6 @@ errorcode, jointHandle_2 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_jo
 errorcode, jointHandle_3 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint3',vrep.simx_opmode_blocking)
 errorcode, jointHandle_4 = vrep.simxGetObjectHandle(clientID,'PhantomXPincher_joint4',vrep.simx_opmode_blocking)
 
-### initialization
-obj_file = open('./results/edge-experiments/data.txt', 'w')
-string = "time"+","+"data"+"\n"
-obj_file.write(string) 
 
 def vrepControl(): 
 
@@ -69,15 +65,6 @@ def vrepControl():
 		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_3, jointAngle3*3.14/180, vrep.simx_opmode_streaming)
 		errorcode = vrep.simxSetJointTargetPosition(clientID,jointHandle_4, jointAngle4*3.14/180, vrep.simx_opmode_streaming)
 		errorcode = vrep.simxSetIntegerSignal(clientID,'PhantomXPincher_gripperClose',gripperPosition,vrep.simx_opmode_oneshot)
-
-		### store and save gripper position
-		string = str('{0:6f}'.format(time.time()))+","+str(gripperPosition)+"\n"
-		obj_file.write(string) #time,gripper-position
-
-		if(count > 25):
-			print "closing applciation"
-			obj_file.close()
-			break
 
 		### reading haptic data
 		[errorcode, dataForce] = vrep.simxGetJointForce(clientID,jointHandle_4,vrep.simx_opmode_streaming)

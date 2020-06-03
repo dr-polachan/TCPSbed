@@ -61,18 +61,16 @@ def myLoadTestbedComponents(net):
 
     print "*** Loading Testbed Components (START) >>>"
 
-    net.get('hRx1').cmd("sudo nohup ./scripts/Rx1 &")
-    net.get('hTx1').cmd("sudo nohup ./scripts/Tx1 &")
-    net.get('hRx2').cmd("sudo nohup ./scripts/Rx2 &")
-    net.get('hTx2').cmd("sudo nohup ./scripts/Tx2 &")
-
-    net.get('hTEM').cmd("sudo nohup ./scripts/TEM &")
-
-
+    #net.get('hRx1').cmd("sudo nohup ./scripts/Rx1 &")
+    #net.get('hTx1').cmd("sudo nohup ./scripts/Tx1 &")
+    #net.get('hRx2').cmd("sudo nohup ./scripts/Rx2 &")
+    #net.get('hTx2').cmd("sudo nohup ./scripts/Tx2 &")
     
-    #net.get('hServer').cmd("cd  ../runDirectory/; sudo nohup ./scripts/server &") 
-    #net.get('hSSEI').cmd("cd  ../runDirectory/; sudo nohup ./scripts/slave_ei &")    
-    #net.get('hTES').cmd("cd  ../runDirectory/; sudo nohup ./scripts/slave")    
+    net.get('hTEM').cmd("cd  ../runDirectory/; sudo nohup ./scripts/master &")
+    net.get('hTEM').cmd("cd  ../runDirectory/; sudo nohup ./scripts/server &") 
+    net.get('hTES').cmd("cd  ../runDirectory/; sudo nohup ./scripts/slave &")     
+    net.get('hTES').cmd("cd  ../runDirectory/; sudo nohup ./scripts/slave_ei")     
+
 
     print "*** Loading Testbed Components (END) <<<"    
 
