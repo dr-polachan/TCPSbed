@@ -2,7 +2,7 @@
 #xterm -title "hTES" -hold -e "sudo tcpdump" &
 #xterm -title "hTES" -hold -e "sudo tshark -i hTES-eth0" &
 sleep 5
-xterm -title "hTx" -hold -e "sudo tcpreplay -i hTx-eth0 --loop=0 -K --mbps 100.0 ./scripts/test_modified.pcap" &
+xterm -title "hTx" -hold -e "sudo tcpreplay -i hTx2-eth0 --loop=0 -K --mbps 100.0 ./scripts/test_tx2_to_rx2.pcap" &
 
 
 #xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &

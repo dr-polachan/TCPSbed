@@ -16,7 +16,7 @@ import datetime
 
 execfile("./settings")
 
-def mySimpleNetwork(): 
+def myNetwork(): 
 
     info( '********* Project 1Task 1  **********************\n' )
     net = Mininet( topo=None, build=False, ipBase='10.0.0.0/8')
@@ -29,78 +29,27 @@ def mySimpleNetwork():
     info( '*** Add hosts\n')
     hTEM = net.addHost('hTEM', ip='10.0.0.1/8', mac='00:00:00:00:00:01')
     hTES = net.addHost('hTES', ip='10.0.0.2/8', mac='00:00:00:00:00:02')
-    hTx = net.addHost('hTx', ip='10.0.0.3/8', mac='00:00:00:00:00:03')
-    hRx = net.addHost('hRx', ip='10.0.0.4/8', mac='00:00:00:00:00:04')
-
+    hTx1 = net.addHost('hTx1', ip='10.0.0.3/8', mac='00:00:00:00:00:03')
+    hRx1 = net.addHost('hRx1', ip='10.0.0.4/8', mac='00:00:00:00:00:04')
+    hTx2 = net.addHost('hTx2', ip='10.0.0.5/8', mac='00:00:00:00:00:05')
+    hRx2 = net.addHost('hRx2', ip='10.0.0.6/8', mac='00:00:00:00:00:06')
 
     info( '*** Add links between hosts and switches\n')
-    linkConfig_HToH = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
+    linkConfig_l = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
 
-    net.addLink(hTEM, s0,cls=TCLink , **linkConfig_HToH)
-    net.addLink(hTx, s0,cls=TCLink , **linkConfig_HToH)
-    net.addLink(hRx, s1,cls=TCLink , **linkConfig_HToH)
-    net.addLink(hTES, s1,cls=TCLink , **linkConfig_HToH)
+    net.addLink(hTEM, s0,cls=TCLink , **linkConfig_l)
+    net.addLink(hTx1, s0,cls=TCLink , **linkConfig_l)
+    net.addLink(hRx2, s0,cls=TCLink , **linkConfig_l)
 
-    net.addLink(s0, s1,cls=TCLink , **linkConfig_HToH)
+    net.addLink(hRx1, s1,cls=TCLink , **linkConfig_l)
+    net.addLink(hTx2, s1,cls=TCLink , **linkConfig_l)
+    net.addLink(hTES, s1,cls=TCLink , **linkConfig_l)
+
+    net.addLink(s0, s1,cls=TCLink , **linkConfig_l)
 
 
     info( '*** Starting network\n')
     net.build()
-
-    net.start()
-
-    #net.pingAll()
-
-    return(net)
-
-def myNetwork():
-
-    info( '********* Project 1Task 1  **********************\n' )
-    net = Mininet( topo=None, build=False, ipBase='10.0.0.0/8')
-
-
-    info( '*** Adding controller\n' )
-    c0=net.addController(name='c0', controller=OVSController, protocol='tcp', port=6633)
-
-    info( '*** Add switches\n')
-    s0 = net.addSwitch('s0', cls=OVSKernelSwitch, failMode='standalone')
-    s1 = net.addSwitch('s1', cls=OVSKernelSwitch, failMode='standalone')
-    s2 = net.addSwitch('s2', cls=OVSKernelSwitch, failMode='standalone')
-    s3 = net.addSwitch('s3', cls=OVSKernelSwitch, failMode='standalone')
-
-    info( '*** Add hosts\n')
-    hTEM = net.addHost('hTEM', ip='10.0.0.1/8')
-    hServer = net.addHost('hServer', ip='10.0.0.2/8')   
-    hSSEI = net.addHost('hSSEI', ip='10.0.0.3/8')
-    hTES = net.addHost('hTES', ip='10.0.0.4/8')
-
-    
-    info( '*** Add links between hosts and switches\n')
-    linkConfig_HToS = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
-    linkConfig_SToS = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
-    linkConfig_lastmile = {'delay':'0', 'bw' : 100, 'loss' : 50, 'use_htb':'True' }
-
-
-
-    l0=net.addLink(hTEM, s0,cls=TCLink , **linkConfig_HToS)
-    l1=net.addLink(s0, s1,cls=TCLink , **linkConfig_SToS)
-    l2=net.addLink(hServer, s1,cls=TCLink , **linkConfig_HToS)
-    l3=net.addLink(s1, s2,cls=TCLink , **linkConfig_SToS)
-    l4=net.addLink(hSSEI, s2,cls=TCLink , **linkConfig_HToS)
-    l5=net.addLink(s2, s3,cls=TCLink , **linkConfig_lastmile)
-    l6=net.addLink(hTES, s3,cls=TCLink , **linkConfig_HToS)
-   
-
-    info( '*** Starting network\n')
-    net.build()
-
-    info( '*** Starting switches\n')
-    net.get('s0').start([c0])
-    net.get('s1').start([c0])
-    net.get('s2').start([c0])
-    net.get('s3').start([c0])
-
-    
 
     net.start()
 
@@ -112,9 +61,11 @@ def myLoadTestbedComponents(net):
 
     print "*** Loading Testbed Components (START) >>>"
 
-    #net.get('hTES').cmd("sudo nohup ./scripts/rx &")
-    net.get('hRx').cmd("sudo nohup ./scripts/Rx &")
-    net.get('hTx').cmd("sudo nohup ./scripts/Tx &")
+    net.get('hRx1').cmd("sudo nohup ./scripts/Rx1 &")
+    net.get('hTx1').cmd("sudo nohup ./scripts/Tx1 &")
+    net.get('hRx2').cmd("sudo nohup ./scripts/Rx2 &")
+    net.get('hTx2').cmd("sudo nohup ./scripts/Tx2 &")
+
     net.get('hTEM').cmd("sudo nohup ./scripts/TEM &")
 
 
@@ -135,10 +86,11 @@ if __name__ == '__main__':
     #os.system("sudo rm ../runDirectory/results/edge-experiments/*")
 
     # Simulate Network Topology
-    #net = myNetwork()
-    net = mySimpleNetwork()
+    net = myNetwork()
+
     # Loading Testbed Components
     myLoadTestbedComponents(net)
+    
     CLI(net)
     net.stop()
     # Exit Mininet	

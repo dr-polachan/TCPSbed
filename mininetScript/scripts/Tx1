@@ -1,7 +1,8 @@
 #!/bin/bash
 #xterm -title "hTES" -hold -e "sudo tcpdump" &
 #xterm -title "hTES" -hold -e "sudo tshark -i hTES-eth0" &
-xterm -title "hRx" -hold -e "sudo wireshark -i hRx-eth0" &
+sleep 5
+xterm -title "hTx1" -hold -e "sudo tcpreplay -i hTx1-eth0 --loop=0 -K --mbps 100.0 ./scripts/test_tx1_to_rx1.pcap" &
 
 
 #xterm -title "vrepLoader" -hold -e "sudo python v-rep/vrepLoader.py" &

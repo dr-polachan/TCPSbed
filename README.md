@@ -5,6 +5,10 @@ Objective - For performing experiments to demonstrate tails in QoS distributions
 
 Status - basic structure done.
 
+How to Run ?
+(1) Go to TCPSbed/mininetScript
+(2) sudo python exp-qos-plots.py
+
 # TCPSbed (v1.0) 
 
 A Modular Testbed for Tactile Internet based Cyber-Physical Systems
