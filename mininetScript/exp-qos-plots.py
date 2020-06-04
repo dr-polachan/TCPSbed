@@ -35,17 +35,19 @@ def myNetwork():
     hRx2 = net.addHost('hRx2', ip='10.0.0.6/8', mac='00:00:00:00:00:06')
 
     info( '*** Add links between hosts and switches\n')
-    linkConfig_H_H = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
+    linkConfig_S_S = {'delay':'0.2ms', 'bw' : 10, 'use_htb':'True'}
+    linkConfig_H_S = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
 
-    net.addLink(hTEM, s0,cls=TCLink , **linkConfig_l)
-    net.addLink(hTx1, s0,cls=TCLink , **linkConfig_l)
-    net.addLink(hRx2, s0,cls=TCLink , **linkConfig_l)
 
-    net.addLink(hRx1, s1,cls=TCLink , **linkConfig_l)
-    net.addLink(hTx2, s1,cls=TCLink , **linkConfig_l)
-    net.addLink(hTES, s1,cls=TCLink , **linkConfig_l)
+    net.addLink(hTEM, s0,cls=TCLink , **linkConfig_H_S)
+    net.addLink(hTx1, s0,cls=TCLink , **linkConfig_H_S)
+    net.addLink(hRx2, s0,cls=TCLink , **linkConfig_H_S)
 
-    net.addLink(s0, s1,cls=TCLink , **linkConfig_l)
+    net.addLink(hRx1, s1,cls=TCLink , **linkConfig_H_S)
+    net.addLink(hTx2, s1,cls=TCLink , **linkConfig_H_S)
+    net.addLink(hTES, s1,cls=TCLink , **linkConfig_H_S)
+
+    net.addLink(s0, s1,cls=TCLink , **linkConfig_S_S)
 
 
     info( '*** Starting network\n')
