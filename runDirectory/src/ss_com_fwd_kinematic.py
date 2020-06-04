@@ -15,6 +15,8 @@ def forward_flow_kinematic():
 
 		### receive message
 		msg = transfers.receive(obj_rx)
+        ret = ping.echo_back(msg, "tpf_ss_com_entry") # echo-point
+
 
 		### decode message
 		msg_list = codec.generic.decode(msg) 
@@ -24,3 +26,4 @@ def forward_flow_kinematic():
 
 		### send to tactile slave
 		transfers.send(obj_tx,msg)
+        ret = ping.echo_back(msg, "tpf_ss_com_exit") # echo-point
