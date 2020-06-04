@@ -35,7 +35,7 @@ def myNetwork():
     hRx2 = net.addHost('hRx2', ip='10.0.0.6/8', mac='00:00:00:00:00:06')
 
     info( '*** Add links between hosts and switches\n')
-    linkConfig_l = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
+    linkConfig_H_H = {'delay':'0', 'bw' : 100, 'use_htb':'True'}
 
     net.addLink(hTEM, s0,cls=TCLink , **linkConfig_l)
     net.addLink(hTx1, s0,cls=TCLink , **linkConfig_l)

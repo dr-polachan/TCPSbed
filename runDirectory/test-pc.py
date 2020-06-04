@@ -14,7 +14,7 @@ test_pc_ip = ms_com_ip
 test_pc_udp_port = 7000
 
 ## echo count, interval
-const_ping_count = 1000 # number of echo commands to send 
+const_ping_count = 10000 # number of echo commands to send 
 const_interpkt_delay_ms = 10 # interpacket delay in milli seconds
 
 ## list of echo points
