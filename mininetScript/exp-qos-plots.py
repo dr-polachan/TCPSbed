@@ -60,8 +60,8 @@ def myNetwork():
 def myLoadTestbedComponents(net):
 
     ### generating cross-traffic
-    #net.get('hTx1').cmd("sudo nohup ./scripts/Tx1 &")
-    #net.get('hTx2').cmd("sudo nohup ./scripts/Tx2 &")
+    net.get('hTx1').cmd("sudo nohup ./scripts/Tx1 &")
+    net.get('hTx2').cmd("sudo nohup ./scripts/Tx2 &")
 
     print "*** Loading Testbed Components (START) >>>"
     
