@@ -1,5 +1,5 @@
 #!/bin/bash
 #xterm -title "hTx2" -hold -e "sudo tcpreplay -i hTx2-eth0 --loop=0 -K --mbps 100.0 ./scripts/data_tx2_to_rx2.pcap" &
-xterm -title "hTx2" -hold -e "sudo tcpreplay -i hTx2-eth0 --loop=0 -K --mbps 1.0 ./scripts/data_tx2_to_rx2.pcap" &
+#xterm -title "hTx2" -hold -e "sudo tcpreplay -i hTx2-eth0 --loop=0 -K --mbps 1.0 ./scripts/data_tx2_to_rx2.pcap" &
 
-
+sudo tcpreplay -i hTx2-eth0 --loop=0 -K --mbps 100.0 ./scripts/data_tx2_to_rx2.pcap

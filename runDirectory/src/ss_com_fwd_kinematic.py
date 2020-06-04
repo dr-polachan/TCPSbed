@@ -3,6 +3,8 @@
 import transfers.rev1 as transfers
 import codec.generic
 import time
+import algorithms.test.ping as ping
+
    
 def forward_flow_kinematic():     
 
@@ -15,15 +17,15 @@ def forward_flow_kinematic():
 
 		### receive message
 		msg = transfers.receive(obj_rx)
-        ret = ping.echo_back(msg, "tpf_ss_com_entry") # echo-point
+		ret = ping.echo_back(msg, "tpf_ss_com_entry") # echo-point
 
 
 		### decode message
 		msg_list = codec.generic.decode(msg) 
 
 		### encode message
-		msg = codec.generic.code(msg_list)
+		msg = codec.generic.codev2(msg,msg_list)
 
 		### send to tactile slave
 		transfers.send(obj_tx,msg)
-        ret = ping.echo_back(msg, "tpf_ss_com_exit") # echo-point
+		ret = ping.echo_back(msg, "tpf_ss_com_exit") # echo-point

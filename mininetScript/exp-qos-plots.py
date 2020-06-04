@@ -59,18 +59,16 @@ def myNetwork():
 
 def myLoadTestbedComponents(net):
 
-    print "*** Loading Testbed Components (START) >>>"
-
-    #net.get('hRx1').cmd("sudo nohup ./scripts/Rx1 &")
+    ### generating cross-traffic
     #net.get('hTx1').cmd("sudo nohup ./scripts/Tx1 &")
-    #net.get('hRx2').cmd("sudo nohup ./scripts/Rx2 &")
     #net.get('hTx2').cmd("sudo nohup ./scripts/Tx2 &")
+
+    print "*** Loading Testbed Components (START) >>>"
     
     net.get('hTEM').cmd("cd  ../runDirectory/; sudo nohup ./scripts/master &")
     net.get('hTEM').cmd("cd  ../runDirectory/; sudo nohup ./scripts/server &") 
     net.get('hTES').cmd("cd  ../runDirectory/; sudo nohup ./scripts/slave &")     
     net.get('hTES').cmd("cd  ../runDirectory/; sudo nohup ./scripts/slave_ei")     
-
 
     print "*** Loading Testbed Components (END) <<<"    
 
@@ -81,7 +79,8 @@ if __name__ == '__main__':
     setLogLevel( 'info' )
 
     # clean the results folder
-    #os.system("sudo rm ../runDirectory/results/edge-experiments/*")
+    os.system("sudo rm ../runDirectory/results/qos-analysis/*")
+    os.system("sudo rm ../runDirectory/results/edge-experiments/*")
 
     # Simulate Network Topology
     net = myNetwork()

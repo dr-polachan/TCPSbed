@@ -57,7 +57,7 @@ plt.ylabel("average latency (ms)",fontsize=12)
 ### latency histogram plots
 plt.figure("latency histogram")
 dfx = df_data.iloc[:,0].copy()
-dfx.hist(bins = 200, xlabelsize =12, ylabelsize=12 ) 
+dfx.hist(bins = 100, xlabelsize =12, ylabelsize=12 ) 
 plt.xlabel("latency (ms)", fontsize=12)
 plt.ylabel('frequency (out of '+str(len(dfx))+')',fontsize=12)
 plt.legend(fontsize=12) 

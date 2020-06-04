@@ -1,5 +1,4 @@
 #!/bin/bash
-#xterm -title "hTx1" -hold -e "sudo tcpreplay -i hTx1-eth0 --loop=0 -K --mbps 100.0 ./scripts/data_tx1_to_rx1.pcap" &
-xterm -title "hTx1" -hold -e "sudo tcpreplay -i hTx1-eth0 --loop=0 -K --mbps 1.0 ./scripts/data_tx1_to_rx1.pcap" &
+#xterm -title "hTx1" -hold -e "sudo tcpreplay -i hTx1-eth0 --loop=0 -K --mbps 1.0 ./scripts/data_tx1_to_rx1.pcap" &
 
-
+sudo tcpreplay -i hTx1-eth0 --loop=0 -K --mbps 100.0 ./scripts/data_tx1_to_rx1.pcap

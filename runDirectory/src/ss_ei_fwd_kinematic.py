@@ -30,7 +30,7 @@ def forward_flow_kinematic():
 		msg_kinematic_list = obj_predict.run(msg_kinematic_list,msg_haptic_list)
 
 		### encode message
-		msg_kinematic = codec.code(msg_kinematic_list)
+		msg_kinematic = codec.codev2(msg_kinematic,msg_kinematic_list)
 
 		### send message
 		transfers.send(obj_tx_kinematic,msg_kinematic)

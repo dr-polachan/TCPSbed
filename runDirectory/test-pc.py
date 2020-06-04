@@ -2,7 +2,6 @@
 import transfers_A.udp
 import transfers_A.file
 import os
-print os.getcwd()
 import multiprocessing 
 from multiprocessing import Process, Queue
 import time
@@ -12,14 +11,14 @@ import sys
 ### settings
 execfile("./src/global_settings.py")
 test_pc_ip = ms_com_ip 
-test_pc_udp_port = 6008
+test_pc_udp_port = 7000
 
 ## echo count, interval
-const_ping_count = 2000 # number of echo commands to send 
+const_ping_count = 1000 # number of echo commands to send 
 const_interpkt_delay_ms = 10 # interpacket delay in milli seconds
 
 ## list of echo points
-list_tp = ['tpf_ms_com_entry', 'tpf_ss_com_exit']  
+list_tp = ['tpf_ss_com_exit']  
 
 ## echo inject and receive address
 address_udp_send = (ms_com_ip,kin_link_0)
@@ -127,5 +126,6 @@ if __name__ == '__main__':
 	p2.join()
 	
 	print 'DONE !!!'
+
 
 
