@@ -24,7 +24,7 @@ def forward_flow_kinematic():
         #msg_list = algorithms.kinematics.mouse_controller.revGeneric(msg_list) # msg-list: (x,y,z,pitch=0,pincher)
 
         ### run inverse kinematics algorithm                     
-        msg_list = algorithms.inverse_kinematics.vrep_phantomx.py_fsolve(msg_list) #msg_list:(joint1, joint2, joint3, joint4, gripperPos)
+        #msg_list = algorithms.inverse_kinematics.vrep_phantomx.py_fsolve(msg_list) #msg_list:(joint1, joint2, joint3, joint4, gripperPos)
 
         ### code the message        
         msg = codec.generic.codev2(msg,msg_list)

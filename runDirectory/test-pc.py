@@ -7,15 +7,18 @@ from multiprocessing import Process, Queue
 import time
 import re
 import sys
+import pandas as pd
 
 ### settings
 execfile("./src/global_settings.py")
+
+df = pd.read_excel("./src/data-files/da_vinci_suturing_b001.xlsx", header=0)
+
 test_pc_ip = ms_com_ip 
 test_pc_udp_port = 7000
 
 ## echo count, interval
-const_ping_count = 10000 # number of echo commands to send 
-const_interpkt_delay_ms = 10 # interpacket delay in milli seconds
+const_ping_count = 1000 # number of echo commands to send 
 
 ## list of echo points
 list_tp = ['tpf_ss_com_exit']  
@@ -23,11 +26,6 @@ list_tp = ['tpf_ss_com_exit']
 ## echo inject and receive address
 address_udp_send = (ms_com_ip,kin_link_0)
 address_udp_receive = (test_pc_ip, test_pc_udp_port) 
-
-
-## echo message to send
-messageToSendInit = "begin 16 0 12 0 100 end"
-messageToSendCommand = "begin 16 0 12 0 50 end"
 
 const_echoback_address = test_pc_ip+":"+str(test_pc_udp_port)
 
@@ -45,17 +43,23 @@ def send(q):
     
 	global messageToSend
 
-	for seq in range(100000,(100000+const_ping_count)):        	
+	index_df = 1
+
+	for seq in range(100000,(100000+const_ping_count)):      
+
 		for i in list(list_tp):	    		
 
-			## set initial position
-			time.sleep(const_interpkt_delay_ms/1000.0)           				# inter delay     			
-			msg = messageToSendInit 
-			transfers_A.udp.send(obj_tx,msg,address_tx) 
-
+			 
 			## send command	
-			msg = messageToSendCommand	
-			time.sleep(const_interpkt_delay_ms/1000.0)           				# inter delay     	
+			raw_x = df["x"].loc[index_df]
+			raw_y = df["y"].loc[index_df]
+			raw_z = df["z"].loc[index_df]
+			raw_sleep_time = df["time"].loc[index_df]-df["time"].loc[index_df-1]
+
+			msg = "begin"+" "+str(raw_x)+" "+str(raw_y)+" "+str(raw_z)+" "+"0 0 end"
+			
+			time.sleep(raw_sleep_time) # wait time     	
+			
 			tp = i
 			msgHeader = "ping seq:"+str(seq)+" "+"ip:"+const_echoback_address+" "+"tp:"+tp+" " 	# ping header
 			msg = msgHeader + msg		 						# actual-message
@@ -63,6 +67,8 @@ def send(q):
 			time1 = '{0:6f}'.format(time.time())
 			msg = "time_send:"+time1 + " " + msg       
 			transfers_A.file.send(obj_tx_file,msg,address_tx_file)
+
+			index_df = index_df + 1
         
 	print "send_completed"
 

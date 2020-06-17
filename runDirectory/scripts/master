@@ -9,4 +9,4 @@
 sudo python ms-com.py &
 sudo python ms-ei.py &
 sleep 1
-sudo python test-pc.py
+xterm -title "test-pc" -hold -e "sudo python test-pc.py"
