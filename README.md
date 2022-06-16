@@ -57,5 +57,4 @@ Cite the following publicaitons, if you are using TCPSbed in your work.
 
 # Contact Information
 
-kurianpol@gmail.com 
 https://sites.google.com/view/kurianpolachan/home
