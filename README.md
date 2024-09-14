@@ -54,7 +54,9 @@ VREP is a simulator platform for robots. For demonstration of the testbed we nee
 Cite the following publicaitons, if you are using TCPSbed in your work.
 
 [1] Kurian Polachan, T Venkata Prabhakar, Chandramani Singh, Fernando A. Kuipers, "Towards an Open Testbed for Tactile Cyber Physical Systems", 11th 11th International Conference on COMmunication Systems & NETworkS, COMSNETS 2019 at Bangalore, India.
+[2] Kurian Polachan , Joydeep Pal, Prabhakar T. Venkata , Chandramani Singh , and Fernando A. Kuipers, "TCPSbed: A Modular Testbed for Tactile Internet based Cyber-Physical Systems", IEEE/ACM Transactions on Networking 2021
+
 
 # Contact Information
-
-https://sites.google.com/view/kurianpolachan/home
+email: kurianpol@gmail.com
+webpage: https://sites.google.com/view/cdwl/professor
